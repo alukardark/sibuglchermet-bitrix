@@ -1,0 +1,64 @@
+.last-news {
+  margin: 70px 0 100px;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    li {
+      max-width: 30%;
+      p {
+        font-family: $font-basic;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 1.25;
+        margin-bottom: 20px;
+        color: #000;
+        transition: .2s ease-in-out color, .2s ease-in-out opacity;
+      }
+      a{
+        text-decoration: none;
+        opacity: 1;
+        display: block;
+        &:hover{
+          p{
+            color: $color;
+            opacity: .75;
+          }
+          .last-news__link{
+            padding-right: 26px;
+            opacity: .75;
+          }
+        }
+      }
+    }
+  }
+  &__link{
+    display: inline-block;
+    position: relative;
+    padding-right: 22px;
+    border-bottom: 2px solid $color;
+    text-decoration: none;
+    background: url(../img/arrow-r-blue.svg) calc( 100% - 2px) 7px no-repeat;
+    padding-bottom: 2px;
+    transition: .2s ease-in-out padding-right, .2s ease-in-out opacity;
+    &:hover{
+      //padding-right: 26px;
+    }
+  }
+  &__data {
+    display: flex;
+    margin-bottom: 15px;
+
+  }
+  &__date {
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #8BA0B2;
+    margin-right: 30px;
+  }
+  &__tag {
+    font-weight: 500;
+    font-size: 14px;
+    color: $color;
+  }
+}

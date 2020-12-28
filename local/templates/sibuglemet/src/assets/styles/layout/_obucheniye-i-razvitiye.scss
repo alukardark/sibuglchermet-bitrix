@@ -1,0 +1,27 @@
+.obucheniye-i-razvitiye {
+  &__list {
+    max-width: 890px;
+    padding: 10px 0;
+    li {
+      display: flex;
+      margin-bottom: 50px;
+      h2{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &__img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-width: 115px;
+    width: 115px;
+    height: 115px;
+    margin-right: 41px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,70 @@
+.strategy {
+  &__quote {
+    border: 14px solid rgba(177, 198, 216, 0.3);
+    border-radius: 4px;
+    padding: 30px 35px;
+    font-weight: 300;
+    font-size: 34px;
+    line-height: 1.25;
+    color: #000000;
+    display: flex;
+    margin-bottom: 85px;
+    strong {
+      font-weight: bold;
+      font-size: 34px;
+      color: #000000;
+      display: flex;
+      i {
+        font-weight: 300;
+        margin: 0 5px;
+        display: block;
+      }
+    }
+  }
+  &__goals {
+    margin-bottom: 30px;
+    h2 {
+      margin-bottom: 70px;
+    }
+  }
+  &__goals-info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__goals-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    li {
+      display: flex;
+      width: 47%;
+      margin-bottom: 100px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+  }
+  &__goals-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-width: 185px;
+    width: 185px;
+    height: 185px;
+    margin-right: 45px;
+  }
+  &__goals-title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.49;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  &__goals-result {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.25;
+    color: $color;
+  }
+}

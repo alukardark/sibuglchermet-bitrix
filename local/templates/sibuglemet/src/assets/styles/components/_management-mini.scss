@@ -1,0 +1,90 @@
+.management-mini {
+  margin: 30px 0;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  li {
+    display: flex;
+    background: #EFF3F7;
+    padding: 25px 20px;
+    margin-right: 2.6%;
+    width: 31.6%;
+    margin-bottom: 16px;
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+  }
+  &__photo {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 131px;
+    width: 131px;
+    height: 141px;
+    margin-right: 20px;
+  }
+  &__name {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 12px;
+  }
+  &__specialty {
+    font-family: $font-add;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140.8%;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+  }
+  &__contacts{
+    margin-top: 35px;
+    line-height: 1.8;
+    a {
+      font-family: $font-add;
+      text-decoration: none;
+      color: #000;
+      font-weight: inherit;
+      &:hover{
+        color: $color;
+      }
+      &[href^="mailto"] {
+        text-decoration: underline;
+        &:hover{
+          text-decoration-color: transparent;
+        }
+      }
+    }
+  }
+
+  &--2{
+    .management-mini__list{
+      li{
+        margin-right: 2%;
+        width: 49%;
+        margin-bottom: 19px;
+        padding: 25px;
+        &:nth-of-type(2n) {
+          margin-right: 0;
+        }
+      }
+      .management-mini__name{
+        margin-bottom: 7px;
+      }
+      .management-mini__photo{
+        width: 154px;
+        height: 166px;
+
+      }
+    }
+
+  }
+}

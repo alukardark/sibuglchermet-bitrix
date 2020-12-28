@@ -1,0 +1,45 @@
+a.button {
+  background: $color;
+  border-radius: 3px;
+  box-sizing: border-box;
+  width: 172px;
+  height: 47px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: .2s ease-in-out background;
+  text-decoration: none;
+  &:after{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/arrow-r.svg) center right no-repeat;
+  }
+  &:hover {
+    background: $color-hover;
+    opacity: 1;
+  }
+
+}
+
+@media (max-width: $md) {
+  a.button {
+    &--red {
+      width: 100%;
+      &:hover {
+        border-color: transparent;
+        color: #FFFFFF;
+        background: #B01D1E;
+      }
+    }
+    &--black {
+      width: 100%;
+    }
+  }
+}

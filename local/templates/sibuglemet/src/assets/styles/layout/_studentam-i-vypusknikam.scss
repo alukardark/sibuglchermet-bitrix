@@ -1,0 +1,85 @@
+.studentam-i-vypusknikam {
+  &__wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__cont {
+    width: 65%;
+  }
+
+  &__aside{
+    width: 24%;
+    padding: 15px 0;
+    ul{
+      counter-reset: section;
+      margin: 30px 0;
+      li{
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        margin-bottom: 25px;
+        a{
+          font-weight: 500;
+          font-size: 19px;
+          color: #000000;
+          text-decoration: none;
+          &:hover{
+            color: $color;
+          }
+        }
+        &:before{
+          counter-increment: section;
+          content: counter(section);
+          font-family: $font-add;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          color: #006BCA;
+          border: 1px solid rgba(139, 160, 179, 0.6);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 25px;
+          min-width: 25px;
+          height: 25px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  article{
+    font-family: $font-add;
+    font-weight: normal;
+    font-size: 18px;
+    color: #000000;
+    border: 12px solid rgba(177, 198, 216, 0.2);
+    padding: 30px;
+  }
+  h4{
+    font-weight: normal;
+    font-size: 28px;
+    color: $color;
+  }
+  &__img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 431px;
+    min-width: 431px;
+    height: 253px;
+    margin-left: 40px;
+  }
+  &__block{
+    margin-bottom: 110px;
+    padding-top: 20px;
+  }
+}

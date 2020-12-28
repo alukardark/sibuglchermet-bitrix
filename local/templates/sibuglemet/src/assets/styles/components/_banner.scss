@@ -1,0 +1,18 @@
+.banner {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 280px;
+  padding: 40px 0;
+  margin-bottom: 37px;
+  background-image: url(../img/bg-company.jpg);
+  &--company {
+    background-image: url(../img/bg-company.jpg);
+  }
+  &--products{
+    background-image: url(../img/bg-produktsiya.jpg);
+  }
+  &--company-people{
+    background-image: url(../img/bg-company-people.jpg);
+  }
+}

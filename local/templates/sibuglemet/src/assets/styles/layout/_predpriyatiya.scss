@@ -1,0 +1,205 @@
+.predpriyatiya {
+  padding-bottom: 25px;
+  h1 {
+    color: #000;
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+  }
+  .banner {
+    height: 600px;
+    position: relative;
+  }
+  .breadcrumbs {
+    position: relative;
+    z-index: 2;
+    color: #000;
+    a {
+      color: #000;
+    }
+  }
+  &__map {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+  }
+  &__marker {
+    font-family: $font-basic;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 112.1%;
+    color: $color;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    padding-bottom: 25px;
+    span {
+      background: #fff;
+      padding: 11px;
+      display: block;
+      width: 100%;
+    }
+    &:after {
+      content: '';
+      background: $color;
+      width: 2px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+    &:before {
+      content: '';
+      background: $color;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__col {
+    &:first-of-type {
+      max-width: 900px;
+    }
+    &:last-of-type {
+      max-width: 320px;
+    }
+  }
+  &__contacts {
+    margin-top: 30px;
+    li {
+      position: relative;
+      padding-left: 37px;
+      a {
+        &:hover {
+          color: $color;
+        }
+      }
+    }
+  }
+  &__address {
+    font-family: $font-add;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 30px;
+    &:before {
+      content: '';
+      width: 16px;
+      height: 20px;
+      background: url(../img/address.svg) center no-repeat;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 3px;
+    }
+  }
+  &__tel {
+    a {
+      font-family: $font-add;
+      font-weight: normal;
+      font-size: 16px;
+      color: #000000;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 15px;
+    }
+    &:before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url(../img/tel.svg) center no-repeat;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 3px;
+    }
+
+  }
+  &__mail {
+    a {
+      font-family: $font-add;
+      font-weight: normal;
+      font-size: 16px;
+      color: #000000;
+      display: block;
+      margin-bottom: 15px;
+    }
+    &:before {
+      content: '';
+      width: 16px;
+      height: 12px;
+      background: url(../img/mail.svg) center no-repeat;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 7px;
+    }
+
+  }
+
+  &__history {
+    li {
+      display: flex;
+      margin-bottom: 25px;
+      strong {
+        font-weight: bold;
+        font-size: 28px;
+        color: #8BA0B2;
+        white-space: nowrap;
+        margin-top: -12px;
+      }
+      i {
+        margin: 0 25px;
+      }
+    }
+  }
+  &__history-list {
+    margin: 35px 0;
+  }
+  &__text {
+    max-width: 900px;
+  }
+  &__rekvizity {
+    font-family: $font-add;
+    ul {
+      margin-bottom: 30px;
+      strong {
+        color: #8BA0B2;
+        font-weight: inherit;
+      }
+      li{
+        margin-bottom: 3px;
+      }
+    }
+    a {
+      font-family: $font-add;
+      text-decoration: none;
+      color: #000;
+      font-weight: inherit;
+      &[href^="mailto"] {
+        text-decoration: underline;
+        &:hover{
+          text-decoration-color: transparent;
+        }
+      }
+    }
+  }
+}

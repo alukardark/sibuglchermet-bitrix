@@ -1,0 +1,28 @@
+.sotsialnyye-programmy {
+  padding-bottom: 80px;
+  &__list {
+    li {
+      margin-bottom: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &:nth-of-type(odd){
+        .sotsialnyye-programmy__img{
+          order: 2;
+        }
+      }
+    }
+  }
+  &__info{
+    width: 48.5%;
+    min-width: 48.5%;
+  }
+  &__img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 48.5%;
+    min-width: 48.5%;
+    height: 385px;
+  }
+}
