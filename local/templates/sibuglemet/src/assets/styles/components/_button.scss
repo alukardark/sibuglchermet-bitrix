@@ -19,7 +19,7 @@ a.button {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: url(../img/arrow-r.svg) center right no-repeat;
+    background: url(../img/arrow-r.svg) center right/contain no-repeat;
   }
   &:hover {
     background: $color-hover;
@@ -30,16 +30,15 @@ a.button {
 
 @media (max-width: $md) {
   a.button {
-    &--red {
-      width: 100%;
-      &:hover {
-        border-color: transparent;
-        color: #FFFFFF;
-        background: #B01D1E;
-      }
-    }
-    &--black {
-      width: 100%;
+    font-size: 14px;
+    width: 144px;
+    height: 42px;
+    &:after{
+      content: '';
+      width: 23px;
+      height: 10px;
+      transform: translateY(1px);
+      background: url(../img/arrow-mini.svg) center no-repeat;
     }
   }
 }

@@ -9,12 +9,19 @@
       margin-right: 2%;
       width: 32%;
       margin-bottom: 75px;
-      &:nth-of-type(3n){
+      &:nth-of-type(3n) {
         margin-right: 0;
       }
       a {
         text-decoration: none;
+        &:hover {
+          .management__name {
+            color: $color-hover;
+          }
+
+        }
       }
+
     }
   }
   &__photo {
@@ -33,6 +40,7 @@
     color: #000000;
     padding: 0 3px;
     margin-bottom: 7px;
+    transition: .2s ease-in-out color;
   }
   &__specialty {
     font-family: $font-add;
@@ -42,5 +50,61 @@
     line-height: 141.1%;
     padding: 0 3px;
     color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+@media (max-width: $xl) {
+  .management {
+    &__photo {
+      height: 350px;
+    }
+    &__name {
+      font-size: 20px;
+    }
+
+  }
+}
+
+@media (max-width: $lg) {
+  .management {
+    &__list {
+      li {
+        width: 49%;
+        margin-right: 2% !important;
+        margin-bottom: 50px;
+        &:nth-of-type(2n) {
+          margin-right: 0 !important;
+        }
+      }
+    }
+    &__photo {
+      height: 390px;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .management {
+    &__list {
+      flex-direction: column;
+      margin-bottom: 40px;
+      align-items: center;
+      li {
+        margin-right: 0 !important;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+    &__photo {
+      height: 300px;
+      margin-bottom: 15px;
+    }
+    &__name {
+      font-size: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+    &__specialty {
+      font-size: 14px;
+    }
   }
 }

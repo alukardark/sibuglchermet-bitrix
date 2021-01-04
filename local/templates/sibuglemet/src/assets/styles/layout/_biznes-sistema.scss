@@ -78,7 +78,7 @@
         width: 45.7%;
         margin-right: 8.6%;
         margin-bottom: 60px;
-        &:nth-of-type(2n){
+        &:nth-of-type(2n) {
           margin-right: 0;
         }
         h4 {
@@ -90,7 +90,7 @@
           margin-bottom: 17px;
           max-width: 545px;
         }
-        p{
+        p {
           max-width: 545px;
         }
 
@@ -105,15 +105,191 @@
     height: 327px;
     margin-bottom: 17px;
     position: relative;
-    &:before{
+    border-radius: 3px;
+    &:before {
       content: '';
       width: 60px;
       height: 60px;
       left: 16px;
       bottom: 21px;
-      background:  #fff url("../img/check.svg") 50% 55% no-repeat;
+      background: #fff url("../img/check.svg") 50% 55% no-repeat;
       border-radius: 50%;
       position: absolute;
+    }
+  }
+}
+
+@media (max-width: $xl) {
+  .biznes-sistema {
+    &__objectives {
+      ul {
+        li {
+          padding: 15px;
+          font-size: 16px;
+        }
+        img {
+          margin-right: 20px;
+          width: 60px;
+        }
+      }
+    }
+
+    &__tasks {
+      ul {
+        flex-wrap: wrap;
+        li {
+          width: 32%;
+          margin-right: 2% !important;
+          margin-bottom: 2%;
+          min-height: 220px;
+          &:nth-of-type(3n) {
+            margin-right: 0 !important;
+          }
+        }
+      }
+
+    }
+
+
+
+    &__results {
+      ul{
+        li{
+          width: 48%;
+          margin-right: 4%;
+          margin-bottom: 60px;
+        }
+      }
+    }
+    &__results-img{
+      height: 200px;
+      &:before{
+        width: 35px;
+        height: 35px;
+        background-size: 60%;
+      }
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .biznes-sistema {
+    &__objectives {
+      ul {
+        li {
+          padding: 10px 5px;
+          font-size: 14px;
+          width: 32.6%;
+          margin-right: 1%;
+          border-width: 5px;
+        }
+        img {
+          margin-right: 5px;
+          width: 50px;
+        }
+      }
+    }
+    &__tasks {
+      ul {
+        li {
+          font-size: 16px;
+        }
+      }
+    }
+
+
+    &__results {
+      ul{
+        li{
+          width: 49%;
+          margin-right: 2%;
+          margin-bottom: 40px;
+          h4{
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+          p{
+            font-size: 14px;
+            line-height: 1.25;
+          }
+        }
+      }
+    }
+    &__results-img{
+      height: 180px;
+      &:before{
+        width: 35px;
+        height: 35px;
+        background-size: 60%;
+      }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .biznes-sistema {
+    &__objectives {
+      margin: 40px 0;
+      ul {
+        flex-direction: column;
+        li {
+          border-width: 14px;
+          width: 100%;
+          margin-right: 0;
+          font-size: 14px;
+          padding: 15px;
+          margin-bottom: 10px;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+        img {
+          margin-right: 20px;
+          width: 60px;
+        }
+      }
+    }
+
+    &__tasks {
+      ul {
+        flex-direction: column;
+        li {
+          width: 100%;
+          margin-right: 0 !important;
+          margin-bottom: 5px;
+          flex-direction: row;
+          text-align: left;
+          font-size: 14px;
+          min-height: 105px;
+          padding: 10px 25px;
+          &:before {
+            font-size: 60px;
+            margin-bottom: 0;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+
+    &__results {
+      margin: 50px 0 30px;
+      ul {
+        li {
+          width: 100%;
+          margin-right: 0 !important;
+          margin-bottom: 25px;
+
+        }
+      }
+    }
+    &__results-img{
+      height: 157px;
+      margin-bottom: 15px;
+      &:before{
+        width: 28px;
+        height: 28px;
+        background-size: 60%;
+      }
     }
   }
 }

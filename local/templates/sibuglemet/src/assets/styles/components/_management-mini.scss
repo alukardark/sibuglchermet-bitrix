@@ -40,34 +40,35 @@
     line-height: 140.8%;
     color: rgba(0, 0, 0, 0.7);
   }
-  &__info{
+  &__info {
     display: flex;
     flex-direction: column;
     max-width: 400px;
+    justify-content: space-between;
   }
-  &__contacts{
-    margin-top: 35px;
+  &__contacts {
+    margin-top: 15px;
     line-height: 1.8;
     a {
       font-family: $font-add;
       text-decoration: none;
       color: #000;
       font-weight: inherit;
-      &:hover{
+      &:hover {
         color: $color;
       }
       &[href^="mailto"] {
         text-decoration: underline;
-        &:hover{
+        &:hover {
           text-decoration-color: transparent;
         }
       }
     }
   }
 
-  &--2{
-    .management-mini__list{
-      li{
+  &--2 {
+    .management-mini__list {
+      li {
         margin-right: 2%;
         width: 49%;
         margin-bottom: 19px;
@@ -76,15 +77,80 @@
           margin-right: 0;
         }
       }
-      .management-mini__name{
+      .management-mini__name {
         margin-bottom: 7px;
       }
-      .management-mini__photo{
+      .management-mini__photo {
         width: 154px;
         height: 166px;
 
       }
     }
 
+  }
+}
+
+@media (max-width: $xl) {
+  .management-mini {
+    li {
+      width: 49% !important;
+      margin-right: 1% !important;
+      &:nth-of-type(2n) {
+        margin-right: 0 !important;
+      }
+    }
+
+    &__contacts {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .management-mini {
+    li {
+      padding: 15px 10px !important;
+      margin-right: 0 !important;
+      width: 100% !important;
+    }
+
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .management-mini {
+    margin: 25px 0;
+    li {
+      padding: 15px 10px !important;
+      margin-right: 0 !important;
+      width: 100% !important;
+      margin-bottom: 6px !important;
+    }
+    &__photo {
+      min-width: 77px !important;
+      width: 77px !important;
+      height: 83px !important;
+      margin-right: 10px !important;
+    }
+    &__name {
+      font-size: 15px;
+      margin-bottom: 7px;
+    }
+    &__specialty {
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    &__contacts {
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
   }
 }

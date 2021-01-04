@@ -1,0 +1,424 @@
+.contacts {
+  &__contacts {
+    margin-top: 30px;
+    li {
+      position: relative;
+      padding-left: 37px;
+      a {
+        &:hover {
+          color: $color;
+        }
+      }
+    }
+  }
+  &__address {
+    font-family: $font-add;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 30px;
+    &:before {
+      content: '';
+      width: 16px;
+      height: 20px;
+      background: url(../img/address.svg) center/contain no-repeat;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 3px;
+    }
+  }
+  &__tel {
+    a {
+      font-family: $font-add;
+      font-weight: normal;
+      font-size: 16px;
+      color: #000000;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 15px;
+    }
+    &:before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url(../img/tel.svg) center/contain no-repeat;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 3px;
+    }
+
+  }
+  &__mail {
+    a {
+      font-family: $font-add;
+      font-weight: normal;
+      font-size: 16px;
+      color: #000000;
+      display: block;
+      margin-bottom: 15px;
+    }
+    &:before {
+      content: '';
+      width: 16px;
+      height: 12px;
+      background: url(../img/mail.svg) center/contain no-repeat;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 7px;
+    }
+
+  }
+
+  &__row {
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__map {
+    width: 100%;
+    max-width: 900px;
+    margin-left: 35px;
+    height: 360px;
+  }
+
+  &__form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__form-col {
+    width: 100%;
+    max-width: 460px;
+    margin-right: 25px;
+  }
+  .personal-data {
+    font-family: $font-add;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    a {
+      font-weight: inherit;
+      color: inherit;
+    }
+
+  }
+  &__file-btn {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #006BCA;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $color;
+    cursor: pointer;
+    transition: .2s ease-in-out opacity;
+    &:before {
+      content: '';
+      display: inline-block;
+      background: url(../img/file.svg) center/contain no-repeat;
+      width: 14px;
+      height: 16px;
+      margin-right: 6px;
+    }
+    &:hover {
+      opacity: .75;
+    }
+  }
+  &__file-wrap {
+    display: flex;
+    align-items: flex-start;
+    & > label {
+      width: 100% !important;
+      max-width: 180px !important;
+      margin: 0 !important;
+    }
+  }
+  &__file-upload {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    p {
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+  .file-list {
+    margin-bottom: 15px;
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+    li {
+      padding: 0 15px;
+      height: 38px;
+      background: #DBE5ED;
+      font-weight: normal;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.87);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__file-formats {
+    margin-left: 15px;
+    font-family: $font-add;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .file-error {
+    color: #B40600;
+    margin: 10px 0;
+    font-family: $font-add;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  &__form {
+    background: #EFF3F6;
+    padding: 75px 0;
+    h4 {
+      font-family: $font-add;
+      font-weight: bold;
+      font-size: 18px;
+      color: #000000;
+    }
+    form {
+      width: 100%;
+      input[type=text], input[type=tel], input[type=email] {
+        height: 60px;
+        width: 100%;
+        margin-bottom: 6px;
+        background: #FFFFFF;
+        border: 1px solid #8BA0B2;
+        border-radius: 4px;
+        font-family: $font-add;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #000;
+        padding: 0 20px;
+      }
+      textarea {
+        resize: none;
+        padding: 15px 20px;
+        width: 100%;
+        max-width: 810px;
+        border-radius: 4px;
+        border: 1px solid #8BA0B2;
+        font-family: $font-add;
+        font-weight: normal;
+        line-height: 1.4;
+        color: #000;
+        font-size: 16px;
+        margin-bottom: 6px;
+
+        &::-webkit-input-placeholder {
+          color: rgba(0, 0, 0, 0.7);
+          transition: opacity 0.3s ease;
+        }
+        &::-moz-placeholder {
+          color: rgba(0, 0, 0, 0.7);
+          transition: opacity 0.3s ease;
+        }
+        &:-moz-placeholder {
+          color: rgba(0, 0, 0, 0.7);
+          transition: opacity 0.3s ease;
+        }
+        &:-ms-input-placeholder {
+          color: rgba(0, 0, 0, 0.7);
+          transition: opacity 0.3s ease;
+        }
+
+      }
+      label {
+        position: relative;
+        width: 100%;
+        & > span {
+          font-family: $font-add;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 1.4%;
+          color: rgba(0, 0, 0, 0.5);
+          position: absolute;
+          top: 16px;
+          left: 20px;
+        }
+        input[type=text], input[type=tel], input[type=email] {
+          padding-top: 18px;
+        }
+        input[type=file] {
+          display: none;
+        }
+      }
+      input[type=submit] {
+        width: 100%;
+        height: 57px;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        background: $color;
+        border-radius: 3px;
+        transition: .2s ease-in-out background;
+        margin-bottom: 18px;
+        &:hover {
+          background: $color-hover;
+        }
+      }
+    }
+
+  }
+
+}
+
+@media (max-width: $xl) {
+  .contacts {
+    &__form-col {
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .contacts {
+    &__row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__map {
+      height: 320px;
+      margin-left: 0px;
+      margin-top: 30px;
+    }
+
+    &__form-col {
+      margin-right: 0;
+
+    }
+    &__form-row{
+      flex-direction: column;
+    }
+    &__form{
+      form{
+        textarea{
+          width: 100%;
+          max-width: 460px;
+          height: 150px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .contacts {
+    &__contacts {
+      margin-top: 25px;
+      li {
+        padding-left: 23px;
+      }
+    }
+    &__address {
+      font-size: 14px;
+      margin-bottom: 15px;
+      &:before {
+        width: 13px;
+        height: 16px;
+      }
+    }
+    &__tel {
+      margin-bottom: 15px;
+      &:before {
+        width: 12px;
+        height: 13px;
+      }
+      a {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+    }
+    &__mail {
+      &:before {
+        width: 12px;
+        height: 10px;
+      }
+      a {
+        font-size: 14px;
+      }
+    }
+
+    &__row {
+      margin-bottom: 50px;
+    }
+    &__map {
+      height: 200px;
+      margin-top: 10px;
+    }
+
+
+    .personal-data {
+      text-align: center;
+    }
+    &__file-btn {
+      font-size: 14px;
+      height: 33px;
+    }
+    &__file-wrap {
+
+      & > label {
+        max-width: 142px !important;
+      }
+    }
+    &__file-upload {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      p {
+        margin: 0 0 15px;
+        font-size: 12px;
+      }
+    }
+    &__file-wrap {
+      flex-direction: column;
+    }
+    &__file-formats {
+      margin-left: 0;
+      font-size: 12px;
+      margin-top: 9px;
+    }
+    &__form {
+      padding: 50px 0;
+      form {
+        label {
+          & > span {
+            left: 14px;
+          }
+
+        }
+        input[type=text], input[type=tel], input[type=email] {
+          padding: 0 13px;
+        }
+        textarea {
+          padding: 10px 13px;
+          height: 135px;
+        }
+        input[type=submit] {
+          font-size: 14px;
+          height: 43px;
+          margin-top: 0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

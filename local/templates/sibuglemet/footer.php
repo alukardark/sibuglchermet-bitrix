@@ -7,7 +7,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-
                         <div class="footer__wrap">
                             <div class="footer__col">
                                 <div class="footer__nav">
@@ -41,7 +40,6 @@
                                     </ul>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -54,17 +52,21 @@
                         <div class="col-md-12">
                             <div class="footer__bottom-wrap">
                                 <div class="footer__bottom-col">
-                                    <div class="footer__copy">© <?=date('Y')?> Сибуглемет</div>
+                                    <div class="footer__copy d-none d-md-block">© <?=date('Y')?> Сибуглемет</div>
 
-                                    <div>
+                                    <div class="footer__bottom-col-nav">
                                         <a href="#" class="footer__map">Карта сайта</a>
                                         <a href="#" class="footer__terms-information">Условия использования информации</a>
                                     </div>
                                 </div>
 
 
-                                <div class="footer__development">Разработка и продвижение <a href="//i-complex.ru/"
-                                                                                             target="_blank">i-complex.ru</a>
+                                <div class="d-flex justify-content-between">
+                                    <div class="footer__copy d-md-none">© <?=date('Y')?> Сибуглемет</div>
+                                    <div class="footer__development">
+                                        Разработка и продвижение <a href="//i-complex.ru/"
+                                                                    target="_blank">i-complex.ru</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 .studentam-i-vypusknikam {
-  &__wrap{
+  &__wrap {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -8,27 +8,27 @@
     width: 65%;
   }
 
-  &__aside{
+  &__aside {
     width: 24%;
     padding: 15px 0;
-    ul{
+    ul {
       counter-reset: section;
       margin: 30px 0;
-      li{
+      li {
         display: flex;
         align-items: center;
         line-height: 1;
         margin-bottom: 25px;
-        a{
+        a {
           font-weight: 500;
           font-size: 19px;
           color: #000000;
           text-decoration: none;
-          &:hover{
+          &:hover {
             color: $color;
           }
         }
-        &:before{
+        &:before {
           counter-increment: section;
           content: counter(section);
           font-family: $font-add;
@@ -50,13 +50,12 @@
     }
   }
 
-
-  &__row{
+  &__row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
   }
-  article{
+  article {
     font-family: $font-add;
     font-weight: normal;
     font-size: 18px;
@@ -64,12 +63,12 @@
     border: 12px solid rgba(177, 198, 216, 0.2);
     padding: 30px;
   }
-  h4{
+  h4 {
     font-weight: normal;
     font-size: 28px;
     color: $color;
   }
-  &__img{
+  &__img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -78,8 +77,119 @@
     height: 253px;
     margin-left: 40px;
   }
-  &__block{
+  &__block {
     margin-bottom: 110px;
     padding-top: 20px;
+  }
+
+  &__events {
+    padding-top: 35px;
+  }
+  &__events-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__events-item {
+    width: 48.5%;
+    &:nth-of-type(1), &:nth-of-type(2) {
+      margin-bottom: 50px;
+    }
+  }
+  &__events-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 215px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: $xl) {
+  .studentam-i-vypusknikam {
+    &__cont {
+      //width: 75%;
+    }
+    &__row {
+      flex-direction: column;
+    }
+    &__img {
+      margin-left: 0;
+      width: 100%;
+      max-width: 430px;
+      margin-bottom: 20px;
+      min-width: auto;
+    }
+    &__block {
+      margin-bottom: 60px;
+    }
+    &__aside {
+      ul {
+        li {
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    &__events-img {
+      height: 175px;
+    }
+    &__events-item {
+      width: 49%;
+      &:nth-of-type(1), &:nth-of-type(2) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .studentam-i-vypusknikam {
+    &__aside {
+      display: none;
+    }
+    &__cont {
+      width: 100%;
+    }
+    &__block {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .studentam-i-vypusknikam {
+
+    h4 {
+      font-size: 22px;
+    }
+
+    article {
+      font-size: 14px;
+      line-height: 1.29;
+      padding: 15px;
+    }
+    &__block {
+      margin-bottom: 40px;
+      padding-top: 10px;
+    }
+
+
+    &__events{
+      padding-top: 15px;
+    }
+    &__events-img {
+      height: 150px;
+    }
+    &__events-item {
+      width: 100%;
+      margin-bottom: 10px !important;
+      &:last-of-type{
+        margin-bottom: 0 !important;
+      }
+    }
   }
 }

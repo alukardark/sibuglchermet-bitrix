@@ -3,7 +3,7 @@
     display: flex;
     margin-bottom: 60px;
   }
-  h3{
+  h3 {
     margin-bottom: 25px;
   }
   &__photo {
@@ -15,9 +15,7 @@
     height: 472px;
     margin-right: 70px;
   }
-  &__info {
 
-  }
   &__name {
     margin-bottom: 10px;
   }
@@ -48,17 +46,81 @@
         text-decoration: none;
         &[href^="mailto"] {
           text-decoration: underline;
-          &:hover{
+          &:hover {
             text-decoration-color: transparent;
           }
         }
-        &:hover{
+        &:hover {
           color: $color;
         }
       }
     }
   }
-  &__back{
+  &__back {
     margin-top: 80px;
+  }
+}
+
+@media (max-width: $xl) {
+  .management-item {
+    &__photo{
+      width: 390px;
+      min-width: 390px;
+      height: 420px;
+      margin-right: 40px;
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .management-item {
+    &__wrap {
+      flex-direction: column;
+    }
+    &__photo {
+      height: 330px;
+      max-width: 305px;
+      width: 100%;
+      min-width: auto;
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__contacts{
+      margin-bottom: 40px;
+    }
+    &__back{
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .management-item {
+    h3 {
+      margin-bottom: 20px;
+    }
+    &__photo {
+      height: 233px;
+      max-width: 216px;
+      margin-bottom: 20px;
+    }
+
+
+    &__specialty {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    &__name {
+      text-transform: uppercase;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    &__back {
+      margin-top: 20px;
+    }
+    &__contacts {
+      margin-bottom: 30px;
+    }
   }
 }

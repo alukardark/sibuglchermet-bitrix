@@ -22,3 +22,15 @@
 
   }
 }
+
+@media (max-width: $md) {
+    .breadcrumbs{
+      margin-bottom: 40px;
+      li{
+        font-size: 12px;
+      }
+      a{
+        font-size: 12px;
+      }
+    }
+}

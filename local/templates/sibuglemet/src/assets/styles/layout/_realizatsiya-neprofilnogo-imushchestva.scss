@@ -1,0 +1,33 @@
+.realizatsiya-neprofilnogo-imushchestva {
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(139, 160, 178, 0.3);
+    padding-bottom: 115px;
+  }
+  &__box {
+    width: 100%;
+    max-width: 660px;
+    margin-right: 25px;
+  }
+  &__img {
+    max-width: 550px;
+    width: 100%;
+  }
+}
+
+@media (max-width: $lg) {
+  .realizatsiya-neprofilnogo-imushchestva {
+    &__img{
+      max-width: 400px;
+    }
+    &__row{
+      padding-bottom: 60px;
+    }
+    &__box{
+      margin-right: 0;
+    }
+  }
+}

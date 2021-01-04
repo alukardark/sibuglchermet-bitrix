@@ -1,8 +1,8 @@
 if(document.getElementById('file')){
     document.getElementById('file').addEventListener('change', function () {
         var input = this;
-        var output = input.parentNode.parentNode.parentNode.querySelector('.fancy-modal__file-list');
-        var errorBlock = input.parentNode.parentNode.parentNode.querySelector('.fancy-modal__file-error');
+        var output = input.parentNode.parentNode.parentNode.querySelector('.file-list');
+        var errorBlock = input.parentNode.parentNode.parentNode.querySelector('.file-error');
 
         var children = "";
         var size = "";

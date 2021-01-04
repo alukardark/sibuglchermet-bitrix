@@ -1,10 +1,16 @@
 .history {
-  margin: 70px 0 100px;
+  margin: 70px 0 50px;
   &__list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     li {
+      width: 100%;
       max-width: 31.3%;
+      margin-right: 3%;
+      margin-bottom: 50px;
+      &:nth-of-type(3n){
+        margin-right: 0;
+      }
       p {
         font-family: $font-basic;
         line-height: 1.25;
@@ -14,7 +20,7 @@
         color: #000000;
         transition: .2s ease-in-out color, .2s ease-in-out opacity;
       }
-      a{
+      a {
         text-decoration: none;
         opacity: 1;
         display: block;
@@ -24,43 +30,77 @@
         border-radius: 5px;
         transition: .3s ease-in-out box-shadow;
         overflow: hidden;
-        &:hover{
+        &:hover {
           box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-          p{
+          p {
             //color: $color;
             //opacity: .75;
           }
-          .history__link{
+          .history__link {
             padding-right: 26px;
             opacity: .75;
           }
         }
       }
     }
+
+    .history__fancy{
+      border: none;
+      img{
+        margin: 0;
+      }
+    }
   }
-  &__info{
+  &__fancy-img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 280px;
+    border-radius: 5px;
+    display: block;
+  }
+  &__info {
     padding: 15px 15px 30px;
   }
-  &__img{
+  &__img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 233px;
+    border-radius: 5px 5px 0 0;
+  }
+  &__video{
+    position: relative;
+    &:after{
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      left: 50%;
+      top: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: .2s ease-in-out transform;
+      background: rgba(0, 0, 0, 0.7) url("../img/play.svg") calc(50% + 2px) 50% no-repeat;
+    }
+    &:hover{
+      &:after{
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
 
   }
-  &__link{
+  &__link {
     display: inline-block;
     position: relative;
     padding-right: 22px;
     border-bottom: 2px solid $color;
     text-decoration: none;
-    background: url(../img/arrow-r-blue.svg) calc( 100% - 2px) 7px no-repeat;
+    background: url(../img/arrow-r-blue.svg) calc(100% - 2px) 7px no-repeat;
     padding-bottom: 2px;
     transition: .2s ease-in-out padding-right, .2s ease-in-out opacity;
-    &:hover{
-      //padding-right: 26px;
-    }
   }
   &__data {
     display: flex;
@@ -79,5 +119,119 @@
     font-size: 14px;
     color: $color;
     margin-bottom: 8px;
+  }
+
+
+}
+
+
+@media (max-width: $xl) {
+  .history {
+    margin: 60px 0 30px;
+    &__list {
+      li {
+        max-width: 32%;
+        margin-right: 2%;
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__fancy-img{
+      height: 250px;
+    }
+    &__video{
+      &:after{
+        width: 50px;
+        height: 50px;
+        background-size: 40%;
+      }
+    }
+  }
+}
+
+
+@media (max-width: $lg) {
+  .history {
+    &__list {
+      li {
+        p {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    &__link {
+      font-size: 14px;
+      background-size: 6px 10px;
+      padding-right: 17px !important;
+      order: 2;
+      margin-top: 5px;
+    }
+    &__info{
+      padding: 15px 10px 20px;
+    }
+    &__data{
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    &__img{
+      height: 185px;
+    }
+
+    &__fancy-img{
+      height: 210px;
+    }
+    &__video{
+      &:after{
+        width: 45px;
+        height: 45px;
+        background-size: 40%;
+      }
+    }
+  }
+}
+@media (max-width: $md) {
+  .history {
+    margin: 60px 0 10px;
+    &__list {
+      flex-direction: column;
+      li {
+        max-width: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        p{
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    &__data{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__info{
+      padding: 15px 15px 25px;
+    }
+    &__link {
+      margin-top: 0;
+      order: 0;
+    }
+
+    &__fancy-img{
+      height: 190px;
+    }
+    &__video{
+      &:after{
+        width: 40px;
+        height: 40px;
+        background-size: 35%;
+      }
+    }
   }
 }

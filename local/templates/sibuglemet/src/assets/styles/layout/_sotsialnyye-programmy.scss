@@ -6,14 +6,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      &:nth-of-type(odd){
-        .sotsialnyye-programmy__img{
+      &:nth-of-type(odd) {
+        .sotsialnyye-programmy__img {
           order: 2;
         }
       }
     }
   }
-  &__info{
+  &__info {
     width: 48.5%;
     min-width: 48.5%;
   }
@@ -24,5 +24,52 @@
     width: 48.5%;
     min-width: 48.5%;
     height: 385px;
+  }
+}
+
+@media (max-width: $xl) {
+  .sotsialnyye-programmy {
+    &__img{
+      height: 275px;
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .sotsialnyye-programmy {
+    padding-bottom: 40px;
+    &__list {
+      li {
+      }
+    }
+    h2{
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    &__img{
+      height: 200px;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .sotsialnyye-programmy {
+    &__list {
+      li {
+        flex-direction: column;
+        margin-bottom: 40px;
+      }
+    }
+
+    &__info {
+      order: 2;
+      width: 100%;
+    }
+    &__img {
+      order: 1;
+      width: 100%;
+      height: 175px;
+      margin-bottom: 15px;
+    }
   }
 }

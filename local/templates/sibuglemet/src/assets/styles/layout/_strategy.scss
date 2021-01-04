@@ -11,7 +11,7 @@
     margin-bottom: 85px;
     strong {
       font-weight: bold;
-      font-size: 34px;
+      font-size: inherit;
       color: #000000;
       display: flex;
       i {
@@ -66,5 +66,109 @@
     font-size: 20px;
     line-height: 1.25;
     color: $color;
+  }
+}
+
+@media (max-width: $xl) {
+  .strategy {
+    &__quote {
+      font-size: 30px;
+      margin-bottom: 75px;
+    }
+
+    &__goals-img{
+      min-width: 135px;
+      width: 135px;
+      height: 135px;
+      margin-right: 30px;
+    }
+    &__goals-list{
+      li{
+        width: 48%;
+        margin-bottom: 90px;
+      }
+      p{
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+    }
+    &__goals-title{
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+    &__goals-result{
+      font-size: 16px;
+    }
+
+  }
+
+}
+
+@media (max-width: $lg) {
+  .strategy {
+    &__quote {
+      padding: 25px 15px;
+      font-size: 24px;
+      flex-direction: column;
+      margin-bottom: 55px;
+      strong {
+        margin-bottom: 10px;
+      }
+    }
+
+
+    &__goals-img{
+      min-width: 90px;
+      width: 90px;
+      height: 90px;
+      margin-right: 20px;
+    }
+    &__goals-list{
+      li{
+        width: 48%;
+        margin-bottom: 60px;
+      }
+
+    }
+
+  }
+}
+
+@media (max-width: $md) {
+  .strategy {
+    &__quote {
+      padding: 15px 15px;
+      flex-direction: column;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+    &__goals{
+      h2{
+        margin-bottom: 25px;
+      }
+    }
+
+    &__goals-img{
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    &__goals-list{
+      li{
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 50px;
+        &:last-of-type{
+          //margin-bottom: 0;
+        }
+      }
+
+    }
+    &__goals-title{
+      font-size: 14px;
+
+    }
+    &__goals-result{
+      font-size: 16px;
+    }
   }
 }

@@ -1,19 +1,20 @@
 .burger {
   cursor: pointer;
   position: relative;
-
-  width: 66px;
-  height: 66px;
-  background: #11161B;
-  display: flex;
+  width: 60px;
+  height: 56px;
+  background: $color;
   align-items: center;
   justify-content: center;
   transition: .2s ease-in-out background;
+  display: none;
+  margin-left: auto;
+  margin-right: -15px;
   &.active {
 
   }
   &:hover {
-    background: #2f3d4b;
+    background: $color-hover;
     span {
       &, &:before, &:after {
         //background: rgba(17, 13, 16, 0.82);
@@ -24,10 +25,9 @@
     &, &:before, &:after {
       display: inline-block;
       vertical-align: middle;
-      width: 30px;
-      height: 4px;
+      width: 18px;
+      height: 2px;
       background: #FFFFFF;
-      border-radius: 1px;
       position: relative;
       top: 0px;
       transition: all .3s ease-in-out;
@@ -36,12 +36,12 @@
       position: absolute;
       content: "";
       top: auto;
-      bottom: 9px;
+      bottom: 6px;
     }
     &:before {
       position: absolute;
       content: "";
-      top: 9px;
+      top: 6px;
     }
   }
 
@@ -49,10 +49,10 @@
     span {
       transform: rotate(45deg);
       &:before {
-        transform: translate(0px, -9px) rotate(-90deg);
+        transform: translate(0px, -6px) rotate(-90deg);
       }
       &:after {
-        transform: translate(0px, 9px) rotate(-90deg);
+        transform: translate(0px, 6px) rotate(-90deg);
       }
       &, &:before, &:after {
         background: #fff;
@@ -63,41 +63,6 @@
         &, &:before, &:after {
           background: #fff;
         }
-      }
-    }
-  }
-}
-
-@media (max-width: $lg) {
-  .burger {
-  }
-}
-
-@media (max-width: $sm) {
-  .burger {
-    width: 50px;
-    height: 50px;
-    span {
-      &, &:before, &:after {
-        width: 23px;
-        height: 3px;
-      }
-      &:after {
-        bottom: 7px;
-      }
-      &:before {
-        top: 7px;
-      }
-    }
-    &.active {
-      span {
-        &:before {
-          transform: translate(0px, -7px) rotate(-90deg);
-        }
-        &:after {
-          transform: translate(0px, 7px) rotate(-90deg);
-        }
-
       }
     }
   }

@@ -25,7 +25,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-
+    overflow: hidden;
   }
   &__marker {
     font-family: $font-basic;
@@ -104,7 +104,7 @@
       content: '';
       width: 16px;
       height: 20px;
-      background: url(../img/address.svg) center no-repeat;
+      background: url(../img/address.svg) center/contain no-repeat;
       display: inline-block;
       position: absolute;
       left: 0;
@@ -125,7 +125,7 @@
       content: '';
       width: 16px;
       height: 16px;
-      background: url(../img/tel.svg) center no-repeat;
+      background: url(../img/tel.svg) center/contain no-repeat;
       display: inline-block;
       position: absolute;
       left: 0;
@@ -146,7 +146,7 @@
       content: '';
       width: 16px;
       height: 12px;
-      background: url(../img/mail.svg) center no-repeat;
+      background: url(../img/mail.svg) center/contain no-repeat;
       display: inline-block;
       position: absolute;
       left: 0;
@@ -159,12 +159,14 @@
     li {
       display: flex;
       margin-bottom: 25px;
+      font-family: $font-add;
       strong {
         font-weight: bold;
         font-size: 28px;
         color: #8BA0B2;
         white-space: nowrap;
         margin-top: -12px;
+        font-family: $font-basic;
       }
       i {
         margin: 0 25px;
@@ -185,7 +187,7 @@
         color: #8BA0B2;
         font-weight: inherit;
       }
-      li{
+      li {
         margin-bottom: 3px;
       }
     }
@@ -196,10 +198,93 @@
       font-weight: inherit;
       &[href^="mailto"] {
         text-decoration: underline;
-        &:hover{
+        &:hover {
           text-decoration-color: transparent;
         }
       }
     }
   }
+}
+
+@media (max-width: $xl) {
+  .predpriyatiya {
+    &__col {
+      &:first-of-type {
+        max-width: 590px;
+      }
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .predpriyatiya {
+    &__row {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .predpriyatiya {
+    &__marker {
+      font-size: 14px;
+      span {
+        padding: 9px;
+      }
+    }
+    .banner {
+      height: 700px;
+    }
+    &__contacts {
+      margin-top: 25px;
+      li {
+        padding-left: 23px;
+      }
+    }
+    &__address {
+      font-size: 14px;
+      margin-bottom: 15px;
+      &:before {
+        width: 13px;
+        height: 16px;
+      }
+    }
+    &__tel {
+      margin-bottom: 15px;
+      &:before {
+        width: 12px;
+        height: 13px;
+      }
+      a {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+    }
+    &__mail {
+      &:before {
+        width: 12px;
+        height: 10px;
+      }
+      a {
+        font-size: 14px;
+      }
+    }
+    &__history {
+      li {
+        font-size: 14px;
+        flex-direction: column;
+        strong {
+          font-size: 28px;
+          i {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__rekvizity {
+      font-size: 14px;
+    }
+  }
+
 }

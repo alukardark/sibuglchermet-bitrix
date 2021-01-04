@@ -9,10 +9,30 @@
   &--company {
     background-image: url(../img/bg-company.jpg);
   }
-  &--products{
+  &--products {
     background-image: url(../img/bg-produktsiya.jpg);
   }
-  &--company-people{
+  &--company-people {
     background-image: url(../img/bg-company-people.jpg);
+  }
+  &--news {
+    background-image: url(../img/bg-news.jpg);
+  }
+  &--contacts {
+    background-image: url(../img/bg-contacts.jpg);
+  }
+  &--realizatsiya-neprofilnogo-imushchestva {
+    background-image: url(../img/bg-realizatsiya-neprofilnogo-imushchestva.jpg);
+  }
+  &--okhrana-truda-i-promyshlennaya-bezopasnost {
+    background-image: url(../img/bg-okhrana-truda-i-promyshlennaya-bezopasnost.jpg);
+  }
+}
+
+@media (max-width: $md) {
+  .banner {
+    padding: 12px 0;
+    min-height: 175px;
+    margin-bottom: 20px;
   }
 }

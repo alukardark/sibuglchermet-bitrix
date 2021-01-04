@@ -5,7 +5,7 @@
     li {
       display: flex;
       margin-bottom: 50px;
-      h2{
+      h2 {
         margin-bottom: 10px;
       }
     }
@@ -23,5 +23,32 @@
   &__info {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media (max-width: $lg) {
+  .obucheniye-i-razvitiye {
+    &__img{
+      min-width: 95px;
+      width: 95px;
+      height: 95px;
+      margin-right: 35px;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .obucheniye-i-razvitiye {
+    &__img{
+
+      margin-right: 0px;
+      margin-bottom: 15px;
+    }
+    &__list {
+      li{
+        flex-direction: column;
+        margin-bottom: 30px;
+      }
+    }
   }
 }

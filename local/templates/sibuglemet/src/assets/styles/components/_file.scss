@@ -1,0 +1,46 @@
+.file {
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  &__info{
+    display: flex;
+    flex-direction: column;
+  }
+  &__img {
+    min-width: 41px;
+    width: 41px;
+    height: 56px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 15px;
+    &--xls {
+      background-image: url(../img/xls.svg);
+    }
+    &--png {
+      background-image: url(../img/png.svg);
+    }
+    &--doc {
+      background-image: url(../img/doc.svg);
+    }
+    &--pdf {
+      background-image: url(../img/pdf.svg);
+    }
+
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    color: #000000;
+    margin-bottom: 5px;
+  }
+  &__size {
+    font-weight: 500;
+    font-size: 14px;
+    color: #8BA0B2;
+  }
+
+}

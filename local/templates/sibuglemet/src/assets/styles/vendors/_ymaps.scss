@@ -1,7 +1,7 @@
 .ymaps-2-1-78-copyrights-pane{
   display: none;
 }
-.ymaps-2-1-78-inner-panes{
+#map-predpriyatiya .ymaps-2-1-78-inner-panes{
   &:before{
     content: '';
     position: absolute;
@@ -13,3 +13,31 @@
     background: linear-gradient(180deg, #F3F3EF 28.59%, rgba(235, 245, 223, 0) 48.69%);
   }
 }
+#map-predpriyatiya .ymaps-2-1-78-places-pane{
+  z-index: 2211 !important;
+}
+
+
+
+.contacts .ymaps-2-1-78-image-with-content{
+  margin-top: -15px;
+  -webkit-animation-name: floating-arrow;
+  animation-name: floating-arrow;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+
+@media (max-width: $md) {
+  #map-predpriyatiya .ymaps-2-1-78-inner-panes{
+    &:before{
+      background: linear-gradient(180deg, #F3F3EF 22.72%, rgba(235, 245, 223, 0) 35.4%);
+    }
+  }
+}
+
+

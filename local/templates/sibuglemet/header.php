@@ -47,53 +47,71 @@ $assets->addString('<link href="' . SITE_DIR . 'favicon.ico?v=3" rel="shortcut i
                     <div class="col-md-12">
                         <div class="header__contain">
                             <a href="/" class="header__logo"></a>
-
-                            <div class="header__wrap">
-                                <div class="header__menu-add">
-                                    <a href="#">Охрана труда и промышленная безопасность</a>
-                                    <a href="#">Реализация непрофильного имущества и ТМЦ</a>
-                                </div>
-
-                                <div class="header__menu">
-                                    <ul>
-                                        <li class="active header__menu-dropdown">
-                                            <a href="#">Компания</a>
-                                            <ul>
-                                                <li><a href="#">Подпункт 1</a></li>
-                                                <li><a href="#">Подпункт 2</a></li>
-                                                <li><a href="#">Подпункт 3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Продукция</a>
-                                        </li>
-                                        <li class="header__menu-dropdown">
-                                            <a href="#">Люди компании</a>
-                                            <ul>
-                                                <li><a href="#">Подпункт 1</a></li>
-                                                <li><a href="#">Подпункт 2</a></li>
-                                                <li><a href="#">Подпункт 3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="header__menu-dropdown">
-                                            <a href="#">Новости</a>
-                                            <ul>
-                                                <li><a href="#">Подпункт 1</a></li>
-                                                <li><a href="#">Подпункт 2</a></li>
-                                                <li><a href="#">Подпункт 3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Контакты</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="burger">
+                                <span></span>
                             </div>
 
-                            <div class="header__add-nav">
-                                <a href="#" class="header__personal-area">Личный кабинет</a>
-                                <a href="#" class="header__lang">EN</a>
-                                <a href="#" class="header__visually-impaired"></a>
+                            <div class="header__mobile">
+                                <div class="header__wrap">
+                                    <div class="header__top">
+                                        <div class="header__menu-add d-none d-md-flex">
+                                            <a href="#">Охрана труда и промышленная безопасность</a>
+                                            <a href="#">Реализация непрофильного имущества и ТМЦ</a>
+                                        </div>
+
+
+                                        <div class="header__add-nav">
+                                            <a href="#" class="header__personal-area">Личный кабинет</a>
+                                            <a href="#" class="header__lang">EN</a>
+                                            <a href="#" class="header__visually-impaired"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="header__menu">
+                                        <ul>
+                                            <li class="active header__menu-dropdown">
+                                                <a href="#">Компания</a>
+                                                <ul>
+                                                    <li><a href="#">Стратегия</a></li>
+                                                    <li><a href="#">Менеджмент</a></li>
+                                                    <li><a href="#">Наши предприятия</a></li>
+                                                    <li><a href="#">Бизнес система</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Продукция</a>
+                                            </li>
+                                            <li class="header__menu-dropdown">
+                                                <a href="#">Люди компании</a>
+                                                <ul>
+                                                    <li><a href="#">Открытые вакансии</a></li>
+                                                    <li><a href="#">Студентам и выпускникам</a></li>
+                                                    <li><a href="#">Корпоративные программы</a></li>
+                                                    <li><a href="#">Обучение и развитие</a></li>
+                                                    <li><a href="#">Спорт</a></li>
+                                                    <li><a href="#">Социальные программы</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="header__menu-dropdown">
+                                                <a href="#">Новости</a>
+                                                <ul>
+                                                    <li><a href="#">Пресс-релизы</a></li>
+                                                    <li><a href="#">Наши истории</a></li>
+                                                    <li><a href="#">Медиа-материалы</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Контакты</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                    <div class="header__menu-add d-md-none">
+                                        <a href="#">Охрана труда и промышленная безопасность</a>
+                                        <a href="#">Реализация непрофильного имущества и ТМЦ</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
