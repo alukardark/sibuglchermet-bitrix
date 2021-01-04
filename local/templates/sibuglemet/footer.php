@@ -1,89 +1,199 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
+<? if (!$thisMainPage): ?>
 
-        </div>
 
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="footer__wrap">
-                            <div class="footer__col">
-                                <div class="footer__nav">
-                                    <ul>
-                                        <li><a href="#">Компания</a></li>
-                                        <li><a href="#">Продукция</a></li>
-                                        <li><a href="#">Люди компании</a></li>
-                                        <li><a href="#">Новости</a></li>
-                                        <li><a href="#">Контакты</a></li>
-                                    </ul>
-                                </div>
-                                <div class="footer__nav">
-                                    <ul>
-                                        <li><a href="#">Охрана труда и промышленная безопасность</a></li>
-                                        <li><a href="#">Реализация непрофильного имущества и ТМЦ</a></li>
-                                    </ul>
-                                </div>
+<? endif; ?>
+
+</div>
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer__wrap">
+                    <div class="footer__col">
+                        <div class="footer__nav">
+                            <? $APPLICATION->IncludeComponent(
+                                "bitrix:menu",
+                                "footer_menu",
+                                array(
+                                    "ALLOW_MULTI_SELECT" => "N",
+                                    "CHILD_MENU_TYPE" => "podrazdel",
+                                    "DELAY" => "N",
+                                    "MAX_LEVEL" => "1",
+                                    "MENU_CACHE_GET_VARS" => array(),
+                                    "MENU_CACHE_TIME" => "3600",
+                                    "MENU_CACHE_TYPE" => "N",
+                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                    "ROOT_MENU_TYPE" => "top",
+                                    "USE_EXT" => "Y",
+                                    "COMPONENT_TEMPLATE" => "footer_menu",
+                                    "MENU_THEME" => "site"
+                                ),
+                                false
+                            ); ?>
+                        </div>
+                        <div class="footer__nav">
+                            <ul>
+                                <li>
+                                    <? $APPLICATION->IncludeComponent(
+                                        "bitrix:main.include",
+                                        ".default",
+                                        array(
+                                            "AREA_FILE_SHOW" => "file",
+                                            "AREA_FILE_SUFFIX" => "inc",
+                                            "EDIT_TEMPLATE" => "",
+                                            "PATH" => "/_include/menu-add-1.php",
+                                            "COMPONENT_TEMPLATE" => ".default"
+                                        ),
+                                        false
+                                    ); ?>
+                                </li>
+                                <li>
+                                    <? $APPLICATION->IncludeComponent(
+                                        "bitrix:main.include",
+                                        ".default",
+                                        array(
+                                            "AREA_FILE_SHOW" => "file",
+                                            "AREA_FILE_SUFFIX" => "inc",
+                                            "EDIT_TEMPLATE" => "",
+                                            "PATH" => "/_include/menu-add-2.php",
+                                            "COMPONENT_TEMPLATE" => ".default"
+                                        ),
+                                        false
+                                    ); ?>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer__info">
+                        <a href="tel:" class="footer__tel">
+                            <? $APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                ".default",
+                                array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/_include/tel.php",
+                                    "COMPONENT_TEMPLATE" => ".default"
+                                ),
+                                false
+                            ); ?>
+                        </a>
+                        <div class="footer__tel-desc">
+                            <? $APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                ".default",
+                                array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/_include/tel-desc.php",
+                                    "COMPONENT_TEMPLATE" => ".default"
+                                ),
+                                false
+                            ); ?>
+                        </div>
+
+                        <div class="footer__soc">
+                            <div class="footer__tel-desc">
+                                <? $APPLICATION->IncludeComponent(
+                                    "bitrix:main.include",
+                                    ".default",
+                                    array(
+                                        "AREA_FILE_SHOW" => "file",
+                                        "AREA_FILE_SUFFIX" => "inc",
+                                        "EDIT_TEMPLATE" => "",
+                                        "PATH" => "/_include/social-networks.php",
+                                        "COMPONENT_TEMPLATE" => ".default"
+                                    ),
+                                    false
+                                ); ?>
                             </div>
 
-                            <div class="footer__info">
-                                <a href="tel:8 (800) 999-99-99" class="footer__tel">8 (800) 999-99-99</a>
-                                <div class="footer__tel-desc">Телефон доверия экономической безопасности</div>
-
-                                <div class="footer__soc">
-                                    <div class="footer__soc-title">Мы в социальных сетях:</div>
-                                    <ul>
-                                        <li><a href="#" class="footer__soc--facebook"></a></li>
-                                        <li><a href="#" class="footer__soc--vk"></a></li>
-                                        <li><a href="#" class="footer__soc--ok"></a></li>
-                                        <li><a href="#" class="footer__soc--instagram"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="footer__bottom">
-                <div class="footer__up"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="footer__bottom-wrap">
-                                <div class="footer__bottom-col">
-                                    <div class="footer__copy d-none d-md-block">© <?=date('Y')?> Сибуглемет</div>
-
-                                    <div class="footer__bottom-col-nav">
-                                        <a href="#" class="footer__map">Карта сайта</a>
-                                        <a href="#" class="footer__terms-information">Условия использования информации</a>
-                                    </div>
-                                </div>
-
-
-                                <div class="d-flex justify-content-between">
-                                    <div class="footer__copy d-md-none">© <?=date('Y')?> Сибуглемет</div>
-                                    <div class="footer__development">
-                                        Разработка и продвижение <a href="//i-complex.ru/"
-                                                                    target="_blank">i-complex.ru</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-
     </div>
 
+    <div class="footer__bottom">
+        <div class="footer__up"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer__bottom-wrap">
+                        <div class="footer__bottom-col">
+                            <div class="footer__copy d-none d-md-block">© <?= date('Y') ?> Сибуглемет</div>
+
+                            <div class="footer__bottom-col-nav">
+                                <a href="/map/" class="footer__map">Карта сайта</a>
+                                <a href="/usloviya-ispolzovaniya-informatsii/" class="footer__terms-information">Условия
+                                    использования информации</a>
+                            </div>
+                        </div>
 
 
+                        <div class="d-flex justify-content-between">
+                            <div class="footer__copy d-md-none">© <?= date('Y') ?> Сибуглемет</div>
+                            <div class="footer__development">
+                                Разработка и продвижение <a href="//i-complex.ru/"
+                                                            target="_blank">i-complex.ru</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
 
 
+<script src="<?= SITE_TEMPLATE_PATH ?>/dist/js/vendors~main.js"></script>
+<script src="<?= SITE_TEMPLATE_PATH ?>/dist/js/main.js"></script>
 
 
-<script defer="defer" src="<?=SITE_TEMPLATE_PATH ?>/dist/js/vendors~main.js"></script>
-<script defer="defer" src="<?=SITE_TEMPLATE_PATH ?>/dist/js/main.js"></script>
+<script>
+
+    // $(function () {
+    //     $('.last-news__tags a').on('click', function (e) {
+    //         // e.preventDefault();
+    //         // $thisBtn = $(this);
+    //         // ajaxBtnMore();
+    //     });
+    // });
+    // var ajaxBtnMore = function () {
+    //     var nextpage = parseInt($thisBtn.attr('data-curpage')) + 1;
+    //
+    //     console.log($thisBtn);
+    //     $thisBtn.addClass('load-btn');
+    //     $.ajax({
+    //         url: "?tags=" + "5",
+    //         type: "POST",
+    //         success: function (data) {
+    //             var $data = $(data);
+    //
+    //             var $contents = $data.find('.last-news__list li');
+    //
+    //             $thisBtn.attr('data-curpage', nextpage);
+    //
+    //             $('.last-news__list li:last-of-type').after($contents);
+    //
+    //             if ($thisBtn.attr('data-curpage') === $thisBtn.attr('data-max-page')) {
+    //                 $thisBtn.remove();
+    //             }
+    //             $thisBtn.removeClass('load-btn');
+    //         }
+    //     });
+    // };
+</script>
+
+
 </body>
 </html>

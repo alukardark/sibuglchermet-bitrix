@@ -105,7 +105,7 @@
         height: 100%;
         position: relative;
       }
-      li {
+      &>li {
         &.header__menu-dropdown {
           & > a {
             padding-left: 1px;
@@ -278,7 +278,6 @@
           }
           &.active {
             border: none;
-
           }
           a {
             font-style: normal;

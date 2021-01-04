@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     li {
-      max-width: 32.66%;
+      width: 32.66%;
       margin-right: 1%;
       &:last-of-type {
         margin-right: 0;
@@ -43,7 +43,7 @@
         border-bottom: 1px solid #B1C6D8;
         border-right: 1px solid #B1C6D8;
         padding: 35px 20px 45px;
-        max-width: 33.33%;
+        width: 33.33%;
         margin-right: 0;
       }
     }
@@ -101,12 +101,6 @@
     }
   }
 
-  &__filter-box {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 1.25;
-    color: #181617;
-  }
   &__filter {
     display: flex;
     flex-wrap: wrap;
@@ -153,6 +147,10 @@
   }
   &__filter-box {
     position: relative;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.25;
+    color: #181617;
     ul {
       display: none;
       position: absolute;
@@ -209,7 +207,13 @@
     .last-news__filter-box {
       margin-left: 0;
       &:last-of-type {
-        margin-left: -18px;
+        .last-news__filter-active{
+          padding-left: 17px;
+        }
+        .last-news__filter-months{
+          left: -17px;
+        }
+
       }
     }
 
@@ -364,7 +368,6 @@
     &__list {
       flex-direction: column;
       li {
-        max-width: 100%;
         width: 100%;
         border-top: 1px solid rgba(177, 198, 216, 0.5);
         border-bottom: 1px solid rgba(177, 198, 216, 0.5);
@@ -403,7 +406,6 @@
       align-items: flex-start;
     }
     &__filter-box {
-
       ul {
         padding: 15px 25px 15px 32px;
         min-width: 215px;
@@ -479,5 +481,18 @@
         }
       }
     }
+
+
+
+    &__filter-date{
+      .last-news__filter-box {
+        &:last-of-type {
+          .last-news__filter-months{
+            left: -15px;
+          }
+        }
+      }
+    }
+
   }
 }

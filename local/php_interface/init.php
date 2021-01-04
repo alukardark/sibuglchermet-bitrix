@@ -21,4 +21,36 @@ if ($APPLICATION->GetCurPage(false) === '/') {
 }
 
 
+if(strpos($APPLICATION->GetCurPage(false), 'novosti')){
+    $banner = 'news';
+}
+
+
+
+
+
+
+function add_url_get($a_data,$url = false){
+    $http = $_SERVER['HTTPS'] ? 'https':'http';
+
+    if($url === false){
+        $url = $http.'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    }
+    $query_str = parse_url($url);
+    $path = !empty($query_str['path']) ? $query_str['path'] : '';
+    $return_url = $query_str['scheme'].'://'.$query_str['host'].$path;
+    $query_str = !empty($query_str['query']) ? $query_str['query'] : false;
+    $a_query = array();
+    if($query_str) {
+        parse_str($query_str,$a_query);
+    }
+    $a_query = array_merge($a_query,$a_data);
+    $s_query = http_build_query($a_query);
+    if($s_query){
+        $s_query = '?'.$s_query;
+    }
+    return $return_url.$s_query;
+}
+
+
 

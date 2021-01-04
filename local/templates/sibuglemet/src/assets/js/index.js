@@ -22,42 +22,11 @@ document.querySelectorAll('input[type="tel"]').forEach(el => {
     Inputmask({"mask": "+7 (999) 999-9999"}).mask(el);
 });
 
-var mainBanner = new Swiper('.main-slider .swiper-container', {
+new Swiper('.main-slider .swiper-container', {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 15,
     speed: 600,
-    // autoHeight: true,
-    // autoplay: {
-    //     delay: 3000
-    // },
-    // navigation: {
-    //     nextEl: '.certificates-slider__slider .certificates-slider__slider-next',
-    //     prevEl: '.certificates-slider__slider .certificates-slider__slider-prev',
-    // },
-    // pagination: {
-    //     el: '.main__slider .swiper-pagination',
-    //     type: 'bullets',
-    //     clickable: true,
-    // },
-    // breakpoints: {
-    //     1199: {
-    //         spaceBetween: 24,
-    //         slidesPerView: 4,
-    //     },
-    //     989: {
-    //         spaceBetween: 24,
-    //         slidesPerView: 3,
-    //     },
-    //     767: {
-    //         spaceBetween: 24,
-    //         slidesPerView: 2,
-    //     },
-    //     575: {
-    //         spaceBetween: 24,
-    //         slidesPerView: 1,
-    //     }
-    // },
 });
 
 
@@ -116,4 +85,9 @@ for (let anchor of anchors) {
 
 $("img[title]").each(function () {
     $(this).after($('<span class="img-desc">').html($(this).attr('title')));
+});
+
+
+$('a[href*="tel"]').each(function(){
+    $(this).attr('href', 'tel:'+$(this).text().replace(/\s/g, ''));
 });
