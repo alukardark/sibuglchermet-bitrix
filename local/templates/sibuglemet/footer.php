@@ -155,44 +155,9 @@
 </div>
 
 
-<script src="<?= SITE_TEMPLATE_PATH ?>/dist/js/vendors~main.js"></script>
-<script src="<?= SITE_TEMPLATE_PATH ?>/dist/js/main.js"></script>
 
 
-<script>
 
-    // $(function () {
-    //     $('.last-news__tags a').on('click', function (e) {
-    //         // e.preventDefault();
-    //         // $thisBtn = $(this);
-    //         // ajaxBtnMore();
-    //     });
-    // });
-    // var ajaxBtnMore = function () {
-    //     var nextpage = parseInt($thisBtn.attr('data-curpage')) + 1;
-    //
-    //     console.log($thisBtn);
-    //     $thisBtn.addClass('load-btn');
-    //     $.ajax({
-    //         url: "?tags=" + "5",
-    //         type: "POST",
-    //         success: function (data) {
-    //             var $data = $(data);
-    //
-    //             var $contents = $data.find('.last-news__list li');
-    //
-    //             $thisBtn.attr('data-curpage', nextpage);
-    //
-    //             $('.last-news__list li:last-of-type').after($contents);
-    //
-    //             if ($thisBtn.attr('data-curpage') === $thisBtn.attr('data-max-page')) {
-    //                 $thisBtn.remove();
-    //             }
-    //             $thisBtn.removeClass('load-btn');
-    //         }
-    //     });
-    // };
-</script>
 
 
 </body>

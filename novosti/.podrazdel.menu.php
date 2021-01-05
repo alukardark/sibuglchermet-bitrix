@@ -7,7 +7,19 @@ $aMenuLinks = Array(
         Array(),
         ""
     ),
-
-
+    Array(
+        "Наши истории",
+        "/novosti/nashi-istorii/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Медиа-материалы",
+        "/novosti/media-materialy/",
+        Array(),
+        Array(),
+        ""
+    ),
 );
 ?>

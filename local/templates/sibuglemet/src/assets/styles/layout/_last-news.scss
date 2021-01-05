@@ -39,6 +39,7 @@
       border: 1px solid #B1C6D8;
       border-bottom: none;
       border-right: none;
+      margin-bottom: 30px;
       li {
         border-bottom: 1px solid #B1C6D8;
         border-right: 1px solid #B1C6D8;
@@ -264,6 +265,7 @@
       }
       &.active{
         color: $color;
+        pointer-events: none;
         span{
           &:before{
             opacity: 0;

@@ -30,22 +30,15 @@ while ($ar_Section = $rs_Section->Fetch()) {
     );
 } ?>
 
-<? $i = 0; ?>
-<? foreach ($ar_Result as $ar_Value) { ?>
 
-
-
-    <?
-
-
-
-    $arSelect = Array("ID", "NAME", "PREVIEW_TEXT", "PROPERTY_FILE");
-    $arFilter = Array('ACTIVE' => 'Y', "IBLOCK_ID" => $arResult["ID"], "SECTION_ID" => $ar_Value['ID']);
-    $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize" => 9999), $arSelect);
-    ?>
-
-    <div class="products">
-
+<div class="products">
+    <? $i = 0; ?>
+    <? foreach ($ar_Result as $ar_Value) { ?>
+        <?
+        $arSelect = Array("ID", "NAME", "PREVIEW_TEXT", "PROPERTY_FILE");
+        $arFilter = Array('ACTIVE' => 'Y', "IBLOCK_ID" => $arResult["ID"], "SECTION_ID" => $ar_Value['ID']);
+        $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize" => 9999), $arSelect);
+        ?>
         <div class="products__table">
             <h2><? echo $ar_Value["NAME"] ?></h2>
             <ul class="products__list <? if ($i < 1) {
@@ -57,32 +50,36 @@ while ($ar_Section = $rs_Section->Fetch()) {
                 <? while ($ob = $res->GetNextElement()) {
                     $arFields = $ob->GetFields();
                     //--Редактирование в режиме правки
-                        $arButtons = CIBlock::GetPanelButtons(
-                            $arParams["IBLOCK_ID"],
-                            $arFields["ID"],
-                            0,
-                            array("SECTION_BUTTONS"=>false, "SESSID"=>false)
-                        );
-                        $arItem["EDIT_LINK"] = $arButtons["edit"]["edit_element"]["ACTION_URL"];
-                        $arItem["DELETE_LINK"] = $arButtons["edit"]["delete_element"]["ACTION_URL"];
+                    $arButtons = CIBlock::GetPanelButtons(
+                        $arParams["IBLOCK_ID"],
+                        $arFields["ID"],
+                        0,
+                        array("SECTION_BUTTONS" => false, "SESSID" => false)
+                    );
+                    $arItem["EDIT_LINK"] = $arButtons["edit"]["edit_element"]["ACTION_URL"];
+                    $arItem["DELETE_LINK"] = $arButtons["edit"]["delete_element"]["ACTION_URL"];
 
 
-                        $this->AddEditAction($arFields['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
-                        $this->AddDeleteAction($arFields['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-                     //--Редактирование в режиме правки
+                    $this->AddEditAction($arFields['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
+                    $this->AddDeleteAction($arFields['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+                    //--Редактирование в режиме правки
 
                     ?>
                     <li id="<?= $this->GetEditAreaId($arFields['ID']); ?>">
                         <div class="products__title"><?= $arFields["NAME"] ?></div>
                         <div class="products__row">
-                            <div class="products__desc">
-                                <?= $arFields["PREVIEW_TEXT"] ?>
-                            </div>
+                            <? if ($arFields["PREVIEW_TEXT"]) { ?>
+                                <div class="products__desc">
+                                    <?= $arFields["PREVIEW_TEXT"] ?>
+                                </div>
+                            <? } ?>
+
 
                             <?
-                            $file_link = CFile::GetPath($arFields['PROPERTY_FILE_VALUE']);
-                            $file_name = CFile::GetByID($arFields['PROPERTY_FILE_VALUE'])->arResult[0]['FILE_NAME'];
 
+
+                            $file_link = CFile::GetPath($arFields['PROPERTY_FILE_VALUE']);
+                            $file_name = CFile::GetByID($arFields['PROPERTY_FILE_VALUE'])->arResult[0]['ORIGINAL_NAME'];
                             $file_expansion = new SplFileInfo($file_name);
                             $file_expansion = $file_expansion->getExtension();
 
@@ -95,19 +92,11 @@ while ($ar_Section = $rs_Section->Fetch()) {
                                 <?= $file_name ?>
                             </a>
 
-                            <?
-                            ?>
                         </div>
                     </li>
-                    <?
-                    $i++;
+                    <? $i++;
                 } ?>
-
             </ul>
         </div>
-
-    </div>
-
-
-<? } ?>
-
+    <? } ?>
+</div>

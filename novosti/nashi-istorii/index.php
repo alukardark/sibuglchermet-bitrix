@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Пресс-релизы");
+$APPLICATION->SetTitle("Наши истории");
 ?>
 
 
@@ -12,11 +12,11 @@ $APPLICATION->SetTitle("Пресс-релизы");
 
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:news",
-                        "press_relizy",
+                        "nashi_istorii",
                         array(
-                            "COMPONENT_TEMPLATE" => ".default",
+                            "COMPONENT_TEMPLATE" => "nashi_istorii",
                             "IBLOCK_TYPE" => "content",
-                            "IBLOCK_ID" => "2",
+                            "IBLOCK_ID" => "5",
                             "NEWS_COUNT" => "12",
                             "SORT_BY1" => "SORT",
                             "SORT_ORDER1" => "DESC",
@@ -79,7 +79,7 @@ $APPLICATION->SetTitle("Пресс-релизы");
                             "USE_CATEGORIES" => "N",
                             "USE_FILTER" => "Y",
                             "SEF_MODE" => "Y",
-                            "SEF_FOLDER" => "/novosti/press-relizy/",
+                            "SEF_FOLDER" => "/novosti/nashi-istorii/",
                             "ADD_ELEMENT_CHAIN" => "N",
                             "USE_PERMISSIONS" => "N",
                             "USE_SHARE" => "N",

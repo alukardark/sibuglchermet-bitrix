@@ -24,7 +24,9 @@ if ($APPLICATION->GetCurPage(false) === '/') {
 if(strpos($APPLICATION->GetCurPage(false), 'novosti')){
     $banner = 'news';
 }
-
+if(strpos($APPLICATION->GetCurPage(false), 'produktsiya')){
+    $banner = 'products';
+}
 
 
 

@@ -33,11 +33,15 @@ $this->setFrameMode(true);
                 <li id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                     <div class="products__title"><? print_r($arItem['NAME']) ?></div>
                     <div class="products__row">
-                        <div class="products__desc"><?= $arItem['PREVIEW_TEXT'] ?></div>
+                        <? if ($arItem["PREVIEW_TEXT"]) { ?>
+                            <div class="products__desc">
+                                <?= $arItem["PREVIEW_TEXT"] ?>
+                            </div>
+                        <? } ?>
 
                         <?
                         $file_link = CFile::GetPath($arItem['PROPERTIES']['FILE']['VALUE']);
-                        $file_name = CFile::GetByID($arItem['PROPERTIES']['FILE']['VALUE'])->arResult[0]['FILE_NAME'];
+                        $file_name = CFile::GetByID($arItem['PROPERTIES']['FILE']['VALUE'])->arResult[0]['ORIGINAL_NAME'];
 
                         $file_expansion = new SplFileInfo($file_name);
                         $file_expansion = $file_expansion->getExtension();

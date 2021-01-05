@@ -5,11 +5,14 @@ global $USER;
 $assets = Bitrix\Main\Page\Asset::getInstance();
 $assets->addCss(SITE_TEMPLATE_PATH . "/dist/styles/main.css");
 $assets->addString('<link href="' . SITE_DIR . 'favicon.ico?v=3" rel="shortcut icon"  type="image/x-icon" />');
+
+$assets->addJs(SITE_TEMPLATE_PATH . "/dist/js/vendors~main.js");
+$assets->addJs(SITE_TEMPLATE_PATH . "/dist/js/main.js");
 ?>
 
 
     <!DOCTYPE html>
-<html xml:lang="<?= LANGUAGE_ID ?>" lang="<?= LANGUAGE_ID ?>">
+    <html xml:lang="<?= LANGUAGE_ID ?>" lang="<?= LANGUAGE_ID ?>">
 
     <head>
         <title><?= SITE_NAME . " — " ?><? $APPLICATION->ShowTitle('', true); ?></title>

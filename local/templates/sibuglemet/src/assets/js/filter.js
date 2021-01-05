@@ -34,5 +34,6 @@ $(document).click(function (e) {
 
 
 $(document).on('click', '.last-news__filter-media a', function (e) {
-    $(this).toggleClass('active');
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
 });
