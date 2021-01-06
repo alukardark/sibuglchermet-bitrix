@@ -88,6 +88,15 @@
     }
 
   }
+
+  &--contacts-none {
+    .management-mini__contacts {
+      display: none !important;
+    }
+    h2{
+      display: none;
+    }
+  }
 }
 
 @media (max-width: $xl) {

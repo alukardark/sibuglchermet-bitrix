@@ -144,6 +144,7 @@ $assets->addJs(SITE_TEMPLATE_PATH . "/dist/js/main.js");
 
 <? if (!$thisMainPage): ?>
 
+
         <div class="banner banner--<?=$banner?>">
             <div class="container">
                 <div class="row">
@@ -164,6 +165,12 @@ $assets->addJs(SITE_TEMPLATE_PATH . "/dist/js/main.js");
                     </div>
                 </div>
             </div>
+
+            <? if(strpos($APPLICATION->GetCurPage(false), 'nashi-predpriyatiya')){ ?>
+                 <div id="map-predpriyatiya" class="predpriyatiya__map"></div>
+            <? } ?>
+
+
         </div>
 
 <? endif; ?>

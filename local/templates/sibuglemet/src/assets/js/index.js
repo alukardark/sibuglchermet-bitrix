@@ -91,3 +91,4 @@ $("img[title]").each(function () {
 $('a[href*="tel"]').each(function(){
     $(this).attr('href', 'tel:'+$(this).text().replace(/\s/g, ''));
 });
+

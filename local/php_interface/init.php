@@ -27,6 +27,12 @@ if(strpos($APPLICATION->GetCurPage(false), 'novosti')){
 if(strpos($APPLICATION->GetCurPage(false), 'produktsiya')){
     $banner = 'products';
 }
+if(strpos($APPLICATION->GetCurPage(false), 'kompaniya')){
+    $banner = 'company';
+}
+if(strpos($APPLICATION->GetCurPage(false), 'nashi-predpriyatiya')){
+    $banner = 'predpriyatiya';
+}
 
 
 

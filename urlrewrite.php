@@ -16,6 +16,14 @@ $arUrlRewrite=array (
     'PATH' => '/novosti/nashi-istorii/index.php',
     'SORT' => 100,
   ),
+  9 => 
+  array (
+    'CONDITION' => '#^/kompaniya/menedzhment/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/kompaniya/menedzhment/index.php',
+    'SORT' => 100,
+  ),
   5 => 
   array (
     'CONDITION' => '#^/novosti/press-relizy/#',
