@@ -43,7 +43,7 @@ $this->setFrameMode(true);
             <? endforeach; ?>
         </ul>
 
-        <div>
+        <div class="list-style-cont">
             <?= $arResult["DETAIL_TEXT"] ?>
         </div>
 

@@ -14,9 +14,9 @@ import './menuDropdown.js';
 import './filter.js';
 
 
-// setTimeout(function(){
-// document.body.classList.add('active');
-// }, 100);
+setTimeout(function(){
+    document.body.classList.add('active');
+}, 100);
 
 document.querySelectorAll('input[type="tel"]').forEach(el => {
     Inputmask({"mask": "+7 (999) 999-9999"}).mask(el);
