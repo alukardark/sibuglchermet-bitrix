@@ -33,6 +33,7 @@ for($index = 0; $index < $itemSize; $index++)
 	if($link == '/novosti/' || $link == '/kompaniya/' || $link == '/lyudi-kompanii/'){
         $li_class = 'last-breadcrumbs';
     }
+
 	$arrow = ($index > 0? '<i class="fa fa-angle-right"></i>' : '');
 
 	if($link <> "" && $index != $itemSize-1)

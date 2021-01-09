@@ -1,1 +1,1 @@
-<a href="/rralizatsiya-neprofilnogo-imushchestva-i-tmts/">Реализация непрофильного имущества и ТМЦ</a>
+<a href="/realizatsiya-neprofilnogo-imushchestva-i-tmts/">Реализация непрофильного имущества и ТМЦ</a>

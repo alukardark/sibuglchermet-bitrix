@@ -34,6 +34,22 @@ if(strpos($APPLICATION->GetCurPage(false), 'nashi-predpriyatiya')){
     $banner = 'predpriyatiya';
 }
 
+if(strpos($APPLICATION->GetCurPage(false), 'kontakty')){
+    $banner = 'contacts';
+}
+if(strpos($APPLICATION->GetCurPage(false), 'realizatsiya-neprofilnogo-imushchestva')){
+    $banner = 'realizatsiya-neprofilnogo-imushchestva';
+}
+if(strpos($APPLICATION->GetCurPage(false), 'okhrana-truda-i-promyshlennaya-bezopasnost')){
+    $banner = 'okhrana-truda-i-promyshlennaya-bezopasnost';
+}
+
+if(strpos($APPLICATION->GetCurPage(false), 'lyudi-kompanii')){
+    $banner = 'company-people';
+}
+
+
+
 
 
 

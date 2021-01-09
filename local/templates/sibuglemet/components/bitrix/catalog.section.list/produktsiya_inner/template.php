@@ -15,7 +15,7 @@ $GLOBALS['CATALOG'] = $arResult['SECTIONS'];
 <?
 CModule::IncludeModule("iblock");
 
-$rs_Section = CIBlockSection::GetList(array('left_margin' => 'asc'), array('IBLOCK_ID' => $arResult["ID"]));
+$rs_Section = CIBlockSection::GetList(array('left_margin' => 'asc'), array('IBLOCK_ID' => $arParams['IBLOCK_ID']));
 
 
 while ($ar_Section = $rs_Section->Fetch()) {

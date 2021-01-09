@@ -1,5 +1,13 @@
 <?php
 $arUrlRewrite=array (
+  10 => 
+  array (
+    'CONDITION' => '#^/lyudi-kompanii/vakansii/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/lyudi-kompanii/vakansii/index.php',
+    'SORT' => 100,
+  ),
   8 => 
   array (
     'CONDITION' => '#^/novosti/media-materialy/#',
