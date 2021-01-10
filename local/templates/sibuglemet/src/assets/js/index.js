@@ -3,7 +3,6 @@ import '../styles/main.scss'
 
 window.$ = window.jQuery = require('jquery');
 
-import Inputmask from "inputmask";
 import Swiper from 'swiper';
 
 require("@fancyapps/fancybox");
@@ -12,15 +11,14 @@ import './sidebarSticky.js';
 import './filesToUpload.js';
 import './menuDropdown.js';
 import './filter.js';
+import './forms.js';
 
 
 setTimeout(function(){
     document.body.classList.add('active');
 }, 100);
 
-document.querySelectorAll('input[type="tel"]').forEach(el => {
-    Inputmask({"mask": "+7 (999) 999-9999"}).mask(el);
-});
+
 
 new Swiper('.main-slider .swiper-container', {
     loop: true,

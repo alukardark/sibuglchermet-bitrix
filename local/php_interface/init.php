@@ -78,3 +78,6 @@ function add_url_get($a_data,$url = false){
 
 
 
+define("UPLOAD_MAX_FILE_SIZE", (30 * 1024 * 1024));
+
+

@@ -190,7 +190,7 @@ $this->setFrameMode(true);
                                     <?
                                     foreach ($itemDoc['PROPERTY_FILES_VALUE'] as $fileItem) {
                                         $file_link = CFile::GetPath($fileItem);
-                                        $file_name = CFile::GetByID($fileItem)->arResult[0]['ORIGINAL_NAME'];
+                                        $file_name = strip_tags(CFile::GetByID($fileItem)->arResult[0]['ORIGINAL_NAME']);
                                         $file_expansion = new SplFileInfo($file_name);
                                         $file_expansion = $file_expansion->getExtension();
                                         $file_name = str_replace('.' . $file_expansion, '', $file_name);

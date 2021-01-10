@@ -79,7 +79,7 @@ class AxiBSFeedbackComponent extends CBitrixComponent
             $params['CURRENT_PAGE_URL'] = $this->SanitizeData($request->getPost('CURRENT_PAGE_URL'));
             $params['CURRENT_PAGE'] = $this->SanitizeData($request->getPost('CURRENT_PAGE'));
             $params['FORM_TITLE'] = $this->SanitizeData($request->getPost('FORM_TITLE'));
-            $params['THIS_SERVICE'] = $this->SanitizeData($request->getPost('THIS_SERVICE'));
+            $params['THIS_VACANCIE'] = $this->SanitizeData($request->getPost('THIS_VACANCIE'));
 
             $params['ANSWER_PARAMS_HASH'] = $this->SanitizeData($request->getPost('PARAMS_HASH'));
             $params['ANSWER_EMPTY'] = $this->SanitizeData($request->getPost('EMPTY'));
@@ -121,10 +121,25 @@ class AxiBSFeedbackComponent extends CBitrixComponent
                     throw new SystemException("Не заполнено обязательное поле");
                 }
             }
-            if ($this->arParams['ANSWER_FILE']["size"] > UPLOAD_MAX_FILE_SIZE) {
+
+            if (is_array($this->arParams['ANSWER_FILE']['name'])) {
+                $currentFileSize = '';
                 $maxFileSize = UPLOAD_MAX_FILE_SIZE / 1024 / 1024;
-                throw new SystemException("Максимальный размер загружаемого файла " . $maxFileSize . "мб");
+
+                foreach ($this->arParams['ANSWER_FILE']['size'] as $filesSize) {
+                    $currentFileSize += $filesSize;
+                }
+                if ($currentFileSize > UPLOAD_MAX_FILE_SIZE) {
+                    throw new SystemException("Максимальный размер загружаемого файла " . $maxFileSize . "мб");
+                }
+            } else {
+                if ($this->arParams['ANSWER_FILE']["size"] > UPLOAD_MAX_FILE_SIZE) {
+                    $maxFileSize = UPLOAD_MAX_FILE_SIZE / 1024 / 1024;
+                    throw new SystemException("Максимальный размер загружаемого файла " . $maxFileSize . "мб");
+                }
             }
+
+
         }
     }
 
@@ -142,14 +157,35 @@ class AxiBSFeedbackComponent extends CBitrixComponent
         if (!$this->arParams['IS_AJAX']) {
             return false;
         } else {
-            $fid = CFile::SaveFile($this->arParams['ANSWER_FILE'], "user_files");
+
+
+            if (is_array($_FILES["ANSWER_FILE"]['name'])) {
+                $arrFile = array();
+                foreach ($_FILES["ANSWER_FILE"]["name"] as $key => $photo) {
+                    $tmpFile = Array(
+                        "name" => $photo,
+                        "size" => $_FILES["ANSWER_FILE"]["size"][$key],
+                        "tmp_name" => $_FILES["ANSWER_FILE"]["tmp_name"][$key],
+                        "type" => $_FILES["ANSWER_FILE"]["type"][$key],
+                        "old_file" => "",
+                        "del" => "y",
+                        "MODULE_ID" => "iblock");
+
+                    $fid = CFile::SaveFile($tmpFile, "user_files");
+                    $arrFile[] = $fid;
+                }
+                $fid = $arrFile;
+            } else {
+                $fid = CFile::SaveFile($this->arParams['ANSWER_FILE'], "user_files");
+            }
+
 
             $element = new CIBlockElement();
             $PROPERTY_VALUES = [
                 'PHONE' => $this->arParams['ANSWER_PHONE'],
                 'EMAIL' => $this->arParams['ANSWER_EMAIL'],
                 'TEXT' => $this->arParams['ANSWER_TEXT'],
-                'THIS_SERVICE' => $this->arParams['THIS_SERVICE'],
+                'THIS_VACANCIE' => $this->arParams['THIS_VACANCIE'],
                 'PAGE' => $this->arParams['CURRENT_PAGE'] . ' (' . $this->arParams['CURRENT_PAGE_URL'] . ')',
                 'FILE' => $fid
             ];
@@ -158,18 +194,22 @@ class AxiBSFeedbackComponent extends CBitrixComponent
                 "MODIFIED_BY" => $GLOBALS['USER']->GetID(),
                 "IBLOCK_SECTION_ID" => false,
                 "IBLOCK_ID" => $this->arParams['STORE_IBLOCK_ID'],
-                "NAME" => $this->arParams['FORM_TITLE'] . ' — ' . $this->arParams['ANSWER_NAME'],
+                "NAME" => $this->arParams['ANSWER_NAME'],
                 "PREVIEW_TEXT" => $this->arParams['ANSWER_TEXT'],
                 "ACTIVE" => "Y",
                 "ACTIVE_FROM" => date('d.m.Y'),
                 "PROPERTY_VALUES" => $PROPERTY_VALUES
             ];
             if ($elementId = $element->add($arMessage)) {
+                $GLOBALS['LAST_ID'] = $elementId;
                 return true;
             } else {
                 throw new SystemException($element->LAST_ERROR);
                 return false;
             }
+
+
+
         }
     }
 
@@ -188,8 +228,9 @@ class AxiBSFeedbackComponent extends CBitrixComponent
                     #MESSAGE_PHONE# - Поле ТЕЛЕФОН
                     #MESSAGE_EMAIL# - Поле EMAIL
                     #MESSAGE_TEXT# - Поле СООБЩЕНИЕ/ОТЗЫВ/ВОПРОС
+                    #MESSAGE_FILE# - Файлы
                     #FORM_TITLE# - Название формы
-                    #THIS_SERVICE# - Заказанная услуга
+                    #THIS_VACANCIE# - Заказанная услуга
                     #PAGE# - Название страницы с которой отправлена форма
                     #PAGE_URL# - URL страницы с которой отправлена форма
                     #MESSAGE# - Все заполненые поля в одном макросе
@@ -216,6 +257,28 @@ class AxiBSFeedbackComponent extends CBitrixComponent
 
     protected function sendAdminMail()
     {
+        $link = '';
+        $PRODUCT_ID = $GLOBALS['LAST_ID'];
+
+        $arSelect = Array("ID", "PROPERTY_FILE");
+        $arFilter = Array("IBLOCK_ID" => $this->arParams['STORE_IBLOCK_ID'], "ID" => $PRODUCT_ID);
+        $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize" => 9999), $arSelect);
+        while ($ob = $res->GetNextElement()) {
+            $arFields = $ob->GetFields();
+            $itemsDoc['PROPERTY_FILE_VALUE'][] = $arFields['PROPERTY_FILE_VALUE'];
+        }
+
+
+        foreach ($itemsDoc['PROPERTY_FILE_VALUE'] as $fileItem) {
+            $file_link = CFile::GetPath($fileItem);
+            $file_name = strip_tags(CFile::GetByID($fileItem)->arResult[0]['ORIGINAL_NAME']);
+            $link .= '<br><a href="'.$file_link.'" target="_blank" class="file">'.$file_name.'</a>';
+
+        }
+
+
+
+
         $arEventFields = [
             'EMAIL_TO' => Option::get('main', 'email_from'),
             'EMAIL_ADD' => Option::get('main', 'all_bcc'),
@@ -223,8 +286,9 @@ class AxiBSFeedbackComponent extends CBitrixComponent
             'MESSAGE_PHONE' => $this->arParams['ANSWER_PHONE'],
             'MESSAGE_EMAIL' => $this->arParams['ANSWER_EMAIL'],
             'MESSAGE_TEXT' => $this->arParams['ANSWER_TEXT'],
+            'MESSAGE_FILE' => $link,
             'FORM_TITLE' => $this->arParams['FORM_TITLE'],
-            'THIS_SERVICE' => $this->arParams['THIS_SERVICE'],
+            'THIS_VACANCIE' => $this->arParams['THIS_VACANCIE'],
             'PAGE' => $this->arParams['CURRENT_PAGE'],
             'PAGE_URL' => $this->arParams['CURRENT_PAGE_URL']
         ];

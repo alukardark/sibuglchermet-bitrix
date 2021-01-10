@@ -41,7 +41,7 @@ $this->setFrameMode(true);
 
                         <?
                         $file_link = CFile::GetPath($arItem['PROPERTIES']['FILE']['VALUE']);
-                        $file_name = CFile::GetByID($arItem['PROPERTIES']['FILE']['VALUE'])->arResult[0]['ORIGINAL_NAME'];
+                        $file_name = strip_tags(CFile::GetByID($arItem['PROPERTIES']['FILE']['VALUE'])->arResult[0]['ORIGINAL_NAME']);
 
                         $file_expansion = new SplFileInfo($file_name);
                         $file_expansion = $file_expansion->getExtension();

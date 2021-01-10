@@ -79,7 +79,7 @@ while ($ar_Section = $rs_Section->Fetch()) {
 
 
                             $file_link = CFile::GetPath($arFields['PROPERTY_FILE_VALUE']);
-                            $file_name = CFile::GetByID($arFields['PROPERTY_FILE_VALUE'])->arResult[0]['ORIGINAL_NAME'];
+                            $file_name = strip_tags(CFile::GetByID($arFields['PROPERTY_FILE_VALUE'])->arResult[0]['ORIGINAL_NAME']);
                             $file_expansion = new SplFileInfo($file_name);
                             $file_expansion = $file_expansion->getExtension();
 
