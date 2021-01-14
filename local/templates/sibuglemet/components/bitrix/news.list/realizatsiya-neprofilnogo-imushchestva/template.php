@@ -52,7 +52,7 @@ $this->setFrameMode(true);
                  src="<?= $arItem['DETAIL_PICTURE']['SRC'] ?>" alt="">
 
             <div class="">
-                <a href="//nelikvidi.com/" target="_blank" class="link">Перейти на сайт nelikvidi.com</a>
+                <a href="//nelikvidi.com/org-ooo-uk-evraz-mezhdurechensk-11959.html" target="_blank" class="link">Перейти на сайт nelikvidi.com</a>
             </div>
         </div>
 

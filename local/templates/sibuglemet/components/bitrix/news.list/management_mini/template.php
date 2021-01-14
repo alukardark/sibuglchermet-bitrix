@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 ?>
 
 <? $items = []; ?>
-<h2><?= $arResult['NAME'] ?></h2>
+
 
 <? foreach ($arResult["ITEMS"] as $arItem):
     $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -44,6 +44,12 @@ while ($ob = $res->GetNextElement()) :
     ?>
 
 <? endwhile; ?>
+
+
+<? if (!empty($items)) { ?>
+    <h2><?= $arResult['NAME'] ?></h2>
+    <h3>Менеджмент</h3>
+<? } ?>
 
 <ul class="management-mini__list " id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
     <? foreach ($items as $item): ?>

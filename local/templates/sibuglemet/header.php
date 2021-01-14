@@ -39,6 +39,8 @@ $assets->addJs(SITE_TEMPLATE_PATH . "/dist/js/main.js");
 
 <div class="wrapper">
 
+   
+
     <div class="wrapper-content">
 
     <div class="header">
@@ -150,16 +152,16 @@ $assets->addJs(SITE_TEMPLATE_PATH . "/dist/js/main.js");
                 <div class="row">
                     <div class="col-md-12">
                          <?$APPLICATION->IncludeComponent(
-                                        "bitrix:breadcrumb",
-                                        "breadcrumb",
-                                        array(
-                                            "PATH" => "",
-                                            "SITE_ID" => "s1",
-                                            "START_FROM" => "0",
-                                            "COMPONENT_TEMPLATE" => "breadcrumb"
-                                        ),
-                                        false
-                                    );?>
+	"bitrix:breadcrumb", 
+	"breadcrumb", 
+	array(
+		"PATH" => "",
+		"SITE_ID" => "s1",
+		"START_FROM" => "0",
+		"COMPONENT_TEMPLATE" => "breadcrumb"
+	),
+	false
+);?>
 
                         <h1><? $APPLICATION->ShowTitle(false); ?></h1>
                     </div>

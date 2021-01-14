@@ -48,6 +48,8 @@ $this->setFrameMode(true);
 
 
         </div>
+
+        <div class="swiper-pagination"></div>
     </div>
 
 </div>

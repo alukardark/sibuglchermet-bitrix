@@ -158,6 +158,23 @@
       background-color: #3a3a44;
     }
   }
+
+  &__investor{
+    text-decoration: none !important;
+    color: #fff !important;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    font-weight: 400;
+    font-size: 20px;
+    span{
+      margin-bottom: 5px;
+      display: block;
+    }
+    img{
+      max-width: 95px;
+    }
+  }
 }
 
 @media (max-width: $xl) {
@@ -168,6 +185,13 @@
     &__bottom-col {
       max-width: 545px;
     }
+
+    &__investor{
+      img{
+        max-width: 80px;
+      }
+    }
+
   }
 }
 
@@ -197,6 +221,14 @@
     &__bottom-col{
       max-width: 385px;
     }
+
+    &__investor{
+      margin: 5px 0;
+      font-size: 16px;
+      img{
+        max-width: 75px;
+      }
+    }
   }
 }
 
@@ -216,6 +248,9 @@
     &__soc {
       ul {
         justify-content: flex-start;
+      }
+      .footer__tel-desc{
+        margin-bottom: 25px;
       }
     }
     &__bottom-wrap {
@@ -240,6 +275,18 @@
     &__bottom-col {
       margin-bottom: 30px;
     }
+
+    &__investor{
+      margin: 0;
+      span{
+        font-size: 14px;
+        line-height: 1.25;
+        color: hsla(0,0%,100%,.5);
+      }
+    }
+
+
+
 
   }
 }

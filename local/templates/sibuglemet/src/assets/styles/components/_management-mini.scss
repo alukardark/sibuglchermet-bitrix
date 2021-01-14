@@ -67,6 +67,9 @@
   }
 
   &--2 {
+    h3{
+      display: none;
+    }
     .management-mini__list {
       li {
         margin-right: 2%;

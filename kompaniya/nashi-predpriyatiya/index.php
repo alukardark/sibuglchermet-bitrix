@@ -94,7 +94,7 @@ $APPLICATION->SetTitle("Наши предприятия");
 
 
                     <div class="management-mini management-mini--contacts-none">
-                        <h3>Менеджмент</h3>
+
                         <? $APPLICATION->IncludeComponent(
                             "bitrix:news.list",
                             "management_mini",

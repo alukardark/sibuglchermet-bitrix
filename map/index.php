@@ -24,6 +24,8 @@ $APPLICATION->IncludeComponent(
 ?>
 
 <?
+echo "<br>";
+echo "<br>";
 echo "</div>";
 echo "</div>";
 echo "</div>";

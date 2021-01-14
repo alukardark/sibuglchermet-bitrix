@@ -1,10 +1,8 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetPageProperty("title", "Title");
-$APPLICATION->SetTitle("Главная");
+$APPLICATION->SetTitle("Main");
 ?>
-
-
 
 
 <? $APPLICATION->IncludeComponent(

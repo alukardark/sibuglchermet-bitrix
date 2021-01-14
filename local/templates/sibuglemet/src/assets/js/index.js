@@ -25,6 +25,11 @@ new Swiper('.main-slider .swiper-container', {
     slidesPerView: 1,
     spaceBetween: 15,
     speed: 600,
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
 });
 
 

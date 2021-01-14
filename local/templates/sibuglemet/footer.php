@@ -65,6 +65,11 @@
                                     ); ?>
                                 </li>
                             </ul>
+
+                            <a href="//veb.ru/" class="footer__investor d-none d-md-flex" target="_blank">
+                                <span>Инвестор:</span>
+                                <img src="<?=SITE_TEMPLATE_PATH?>/dist/assets/img/veb-ru.svg">
+                            </a>
                         </div>
                     </div>
 
@@ -113,8 +118,14 @@
                                     false
                                 ); ?>
                             </div>
-
                         </div>
+
+
+                        <a href="//veb.ru/" class="footer__investor d-flex d-md-none" target="_blank">
+                            <span>Инвестор:</span>
+                            <img src="<?=SITE_TEMPLATE_PATH?>/dist/assets/img/veb-ru.svg">
+                        </a>
+
                     </div>
                 </div>
             </div>
