@@ -48,6 +48,9 @@ if(strpos($APPLICATION->GetCurPage(false), 'lyudi-kompanii')){
     $banner = 'company-people';
 }
 
+if (defined('ERROR_404') && ERROR_404=='Y' && !defined('ADMIN_SECTION')){
+    $banner = '';
+}
 
 
 

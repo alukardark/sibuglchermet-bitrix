@@ -53,15 +53,27 @@ $this->setFrameMode(true);
                         </h2>
 
                         <div class="okhrana-truda__indicators-list">
-                            <div class="okhrana-truda__indicators-item">
-                                <?= $arItem['PROPERTIES']['TARGETS_1']['~VALUE']['TEXT'] ?>
-                            </div>
-                            <div class="okhrana-truda__indicators-item">
-                                <?= $arItem['PROPERTIES']['TARGETS_2']['~VALUE']['TEXT'] ?>
-                            </div>
-                            <div class="okhrana-truda__indicators-item">
-                                <?= $arItem['PROPERTIES']['TARGETS_3']['~VALUE']['TEXT'] ?>
-                            </div>
+                            <? if ($arItem['PROPERTIES']['TARGETS_1']['~VALUE']['TEXT']): ?>
+                                <div class="okhrana-truda__indicators-item">
+                                    <?= $arItem['PROPERTIES']['TARGETS_1']['~VALUE']['TEXT'] ?>
+                                </div>
+                            <? endif; ?>
+                            <? if ($arItem['PROPERTIES']['TARGETS_2']['~VALUE']['TEXT']): ?>
+                                <div class="okhrana-truda__indicators-item">
+                                    <?= $arItem['PROPERTIES']['TARGETS_2']['~VALUE']['TEXT'] ?>
+                                </div>
+                            <? endif; ?>
+                            <? if ($arItem['PROPERTIES']['TARGETS_3']['~VALUE']['TEXT']): ?>
+                                <div class="okhrana-truda__indicators-item">
+                                    <?= $arItem['PROPERTIES']['TARGETS_3']['~VALUE']['TEXT'] ?>
+                                </div>
+                            <? else: ?>
+                                <div class="okhrana-truda__indicators-item" style="height: 0;margin: 0;padding: 0; border: none;"></div>
+                            <? endif; ?>
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -174,18 +186,18 @@ $this->setFrameMode(true);
                             while ($ob = $res->GetNextElement()) :
                                 $arFields = $ob->GetFields(); ?>
 
-                            <?
+                                <?
                                 $itemsDoc[$arFields['ID']]['NAME'] = $arFields['NAME'];
                                 $itemsDoc[$arFields['ID']]['PROPERTY_FILES_VALUE'][] = $arFields['PROPERTY_FILES_VALUE'];
-                            ?>
+                                ?>
 
                             <? endwhile; ?>
 
-                            <? foreach ($itemsDoc as $itemDoc) {?>
+                            <? foreach ($itemsDoc as $itemDoc) { ?>
 
 
                                 <div class="okhrana-truda__documents-item">
-                                    <h4><?=$itemDoc['NAME']?></h4>
+                                    <h4><?= $itemDoc['NAME'] ?></h4>
 
                                     <?
                                     foreach ($itemDoc['PROPERTY_FILES_VALUE'] as $fileItem) {
@@ -194,7 +206,7 @@ $this->setFrameMode(true);
                                         $file_expansion = new SplFileInfo($file_name);
                                         $file_expansion = $file_expansion->getExtension();
                                         $file_name = str_replace('.' . $file_expansion, '', $file_name);
-                                        $file_size = CFile::GetByID($fileItem)->arResult[0]['FILE_SIZE']/1000000;
+                                        $file_size = CFile::GetByID($fileItem)->arResult[0]['FILE_SIZE'] / 1000000;
                                         $file_size = number_format($file_size, 2, '.', '');
                                         ?>
 
@@ -202,7 +214,7 @@ $this->setFrameMode(true);
                                             <div class="file__img file__img--<?= $file_expansion ?>"></div>
                                             <div class="file__info">
                                                 <div class="file__title"><?= $file_name ?></div>
-                                                <div class="file__size">(<?=$file_size?> Мб)</div>
+                                                <div class="file__size">(<?= $file_size ?> Мб)</div>
                                             </div>
                                         </a>
                                     <? } ?>
@@ -210,10 +222,6 @@ $this->setFrameMode(true);
                                 </div>
 
                             <? } ?>
-
-
-
-
 
 
                         </div>

@@ -4,7 +4,6 @@
     margin-top: -37px;
     background: #EFF3F6;
     padding: 60px 0;
-
   }
 
   &__indicators-list {
@@ -420,7 +419,7 @@
   .okhrana-truda {
     &__indicators {
       margin-top: -20px;
-      padding: 20px 0 50px;
+      padding: 20px 0 10px;
     }
 
     &__indicators-list {
@@ -430,9 +429,6 @@
     &__indicators-item {
       margin-bottom: 40px;
       max-width: 320px;
-      &:last-of-type {
-        margin-bottom: 0;
-      }
       h3 {
         font-size: 30px;
         margin-bottom: 2px;

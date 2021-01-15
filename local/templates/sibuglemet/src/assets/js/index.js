@@ -72,8 +72,6 @@ for (let anchor of anchors) {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-            console.log(anchor);
-
             let blockID = anchor.getAttribute('href');
             blockID = blockID.substring(blockID.lastIndexOf("#"));
 
@@ -91,7 +89,7 @@ $("img[title]").each(function () {
 });
 
 
-$('a[href*="tel"]').each(function(){
+$('a[href*="tel:"]').each(function(){
     $(this).attr('href', 'tel:'+$(this).text().replace(/\s/g, ''));
 });
 

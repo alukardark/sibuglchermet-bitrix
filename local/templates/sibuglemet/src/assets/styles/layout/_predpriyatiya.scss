@@ -44,6 +44,8 @@
     bottom: 0;
     position: absolute;
     padding-bottom: 25px;
+    text-decoration: none;
+    transition: .2s linear padding, .2s linear color;
     span {
       background: #fff;
       padding: 11px;
@@ -70,6 +72,16 @@
       left: 0;
       bottom: 0;
       transform: translateX(-50%);
+    }
+    &:hover{
+      opacity: 1;
+      text-decoration: none;
+      padding-bottom: 28px;
+      color: rgba(0, 115, 217, .75);
+    }
+
+    &[data-class="predpriyatiya__0"]{
+      display: none;
     }
   }
   &__row {
@@ -206,6 +218,15 @@
       }
     }
   }
+
+  &__item{
+
+    &:not(.active){
+      display: none;
+    }
+
+  }
+
 }
 
 @media (max-width: $xl) {
