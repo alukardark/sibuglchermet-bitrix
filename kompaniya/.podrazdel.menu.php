@@ -1,5 +1,12 @@
 <?
 $aMenuLinks = Array(
+     Array(
+        "Руководство",
+        "/kompaniya/rukovodstvo/",
+        Array(),
+        Array(),
+        ""
+    ),
     Array(
         "Менеджмент",
         "/kompaniya/menedzhment/",
@@ -21,13 +28,13 @@ $aMenuLinks = Array(
         Array(),
         ""
     ),
-    Array(
-        "Бизнес система",
-        "/kompaniya/biznes-sistema/",
-        Array(),
-        Array(),
-        ""
-    ),
+//    Array(
+//        "Бизнес система",
+//        "/kompaniya/biznes-sistema/",
+//        Array(),
+//        Array(),
+//        ""
+//    ),
 
 );
 ?>

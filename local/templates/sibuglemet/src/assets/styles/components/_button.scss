@@ -17,8 +17,9 @@ a.button {
   &:after{
     content: '';
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 13px;
+    transform: translateY(1px);
     background: url(../img/arrow-r.svg) center right/contain no-repeat;
   }
   &:hover {
@@ -37,7 +38,7 @@ a.button {
       content: '';
       width: 23px;
       height: 10px;
-      transform: translateY(1px);
+      transform: translateY(2px);
       background: url(../img/arrow-mini.svg) center no-repeat;
     }
   }

@@ -164,6 +164,11 @@
     }
   }
 
+
+  &__add-nav{
+    display: none;
+  }
+
 }
 
 @media (max-width: $xl) {

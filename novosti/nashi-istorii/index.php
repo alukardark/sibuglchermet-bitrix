@@ -130,6 +130,20 @@ $APPLICATION->SetTitle("Наши истории");
                         false
                     ); ?>
 
+                    <div class="contacts-block ">
+                        <? $APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            ".default",
+                            array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => "/_include/contacts-news.php",
+                                "COMPONENT_TEMPLATE" => ".default"
+                            ),
+                            false
+                        ); ?>
+                    </div>
 
                 </div>
             </div>

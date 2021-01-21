@@ -165,25 +165,21 @@ $APPLICATION->SetTitle("Открытые вакансии");
                         false
                     ); ?>
 
+                    <div class="contacts-block mt-0">
+                        <? $APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            ".default",
+                            array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => "/_include/contacts.php",
+                                "COMPONENT_TEMPLATE" => ".default"
+                            ),
+                            false
+                        ); ?>
+                    </div>
 
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:main.include",
-                        ".default",
-                        array(
-                            "AREA_FILE_SHOW" => "file",
-                            "AREA_FILE_SUFFIX" => "inc",
-                            "EDIT_TEMPLATE" => "",
-                            "PATH" => "/_include/contacts.php",
-                            "COMPONENT_TEMPLATE" => ".default"
-                        ),
-                        false
-                    ); ?>
-
-
-
-
-                    <br>
-                    <br>
 
                 </div>
             </div>

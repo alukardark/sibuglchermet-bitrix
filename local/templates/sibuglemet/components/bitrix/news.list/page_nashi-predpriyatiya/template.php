@@ -15,17 +15,24 @@ $this->setFrameMode(true);
 
 
 
+<? $i = 0; ?>
+<? foreach ($arResult["ITEMS"] as $arItem): ?>
+    <?
+    $map_coords[$this->GetEditAreaId($arItem['ID'])]['NAME'] = $arItem['NAME'];
+    $map_coords[$this->GetEditAreaId($arItem['ID'])]['PROPERTY'] = $arItem['PROPERTIES']['MAP_COORD']['VALUE'];
+    $class = "predpriyatiya__" . $i;
+    $map_coords[$this->GetEditAreaId($arItem['ID'])]['CLASS'] = $class;
+    $i++;
+    ?>
+<? endforeach; ?>
+
 
 <? $i = 0; ?>
 <? foreach ($arResult["ITEMS"] as $arItem): ?>
     <?
     $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
     $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-
-    $map_coords[$this->GetEditAreaId($arItem['ID'])]['NAME'] = $arItem['NAME'];
-    $map_coords[$this->GetEditAreaId($arItem['ID'])]['PROPERTY'] = $arItem['PROPERTIES']['MAP_COORD']['VALUE'];
     $class = "predpriyatiya__" . $i;
-    $map_coords[$this->GetEditAreaId($arItem['ID'])]['CLASS'] = $class;
     if ($i == 0) {
         $class .= ' active';
     }
@@ -42,7 +49,6 @@ $this->setFrameMode(true);
             </div>
             <div class="predpriyatiya__col">
                 <? if (isset($arItem['PROPERTIES']['ADDRESS']['VALUE'][0]['CONTENT']) || isset($arItem['PROPERTIES']['TEL']['VALUE'][0]['CONTENT']) || isset($arItem['PROPERTIES']['EMAIL']['VALUE'][0]['CONTENT'])): ?>
-
                     <h3>Контакты</h3>
                     <ul class="predpriyatiya__contacts">
 
@@ -85,8 +91,15 @@ $this->setFrameMode(true);
                             </li>
                         <? endif; ?>
                     </ul>
-
                 <? endif; ?>
+
+
+                <ul class="predpriyatiya__links">
+                    <? foreach ($map_coords as $map_coord_key => $map_coord) { ?>
+                        <li><a href="<?= "#" . $map_coord_key ?>" class="anchor predpriyatiya__link" data-class="<?= $map_coord['CLASS'] ?>"><?= $map_coord['NAME'] ?></a></li>
+                    <? } ?>
+                </ul>
+
             </div>
         </div>
 
@@ -257,7 +270,7 @@ $this->setFrameMode(true);
 
         setTimeout(function () {
 
-            $('.predpriyatiya__marker').click(function () {
+            $('.predpriyatiya__marker, .predpriyatiya__link').click(function () {
                 var className = $(this).attr('data-class');
 
                 console.log('.predpriyatiya__item.' + className);
@@ -294,11 +307,6 @@ $this->setFrameMode(true);
     }
 
     ymaps.ready(init);
-
-
-    ymaps.ready(function () {
-
-    });
 
 
 </script>
