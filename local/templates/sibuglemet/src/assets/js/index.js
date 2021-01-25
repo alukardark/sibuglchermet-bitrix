@@ -24,7 +24,11 @@ new Swiper('.main-slider .swiper-container', {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 15,
-    speed: 600,
+    speed: 800,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',

@@ -20,16 +20,11 @@ $this->setFrameMode(true);
 <div class="products__wrap">
     <ul class="products__list">
         <? foreach ($arResult["ITEMS"] as $arItem): ?>
-            <?
-            $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-            $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-            $properties = $arItem['DISPLAY_PROPERTIES'];
-            ?>
-
-        <?
-            ?>
-
             <? if ($arItem['PROPERTIES']['MAIN_PAGE']['VALUE']=='Да'): ?>
+                <?
+                $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+                $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+                ?>
                 <li id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                     <div class="products__title"><? print_r($arItem['NAME']) ?></div>
                     <div class="products__row">

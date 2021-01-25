@@ -40,6 +40,37 @@ $this->setFrameMode(true);
     ?>
 
     <div id="<?= $this->GetEditAreaId($arItem['ID']); ?>" class="predpriyatiya__item <?= $class ?>">
+
+        <div class="predpriyatiya__links-wrap">
+            <?
+            $ii = 0;
+            foreach ($map_coords as $map_coord_key => $map_coord) {
+                {
+                    if ($ii % 2 == 0)
+                        $arr1[$map_coord_key] = $map_coord;
+                    else
+                        $arr2[$map_coord_key] = $map_coord;
+                }
+                $ii++;
+            }
+            ?>
+            <ul class="predpriyatiya__links">
+                <? foreach ($arr1 as $map_coord_key => $map_coord) { ?>
+                    <li><a href="<?= "#" . $map_coord_key ?>" class="anchor predpriyatiya__link"
+                           data-class="<?= $map_coord['CLASS'] ?>"><?= $map_coord['NAME'] ?></a></li>
+
+                <? } ?>
+            </ul>
+            <ul class="predpriyatiya__links">
+                <? foreach ($arr2 as $map_coord_key => $map_coord) { ?>
+
+                    <li><a href="<?= "#" . $map_coord_key ?>" class="anchor predpriyatiya__link"
+                           data-class="<?= $map_coord['CLASS'] ?>"><?= $map_coord['NAME'] ?></a></li>
+
+                <? } ?>
+            </ul>
+        </div>
+
         <h2 id="block<?= $arItem['ID'] ?>"><?= $arItem['NAME'] ?></h2>
         <div class="predpriyatiya__row">
             <div class="predpriyatiya__col">
@@ -94,11 +125,6 @@ $this->setFrameMode(true);
                 <? endif; ?>
 
 
-                <ul class="predpriyatiya__links">
-                    <? foreach ($map_coords as $map_coord_key => $map_coord) { ?>
-                        <li><a href="<?= "#" . $map_coord_key ?>" class="anchor predpriyatiya__link" data-class="<?= $map_coord['CLASS'] ?>"><?= $map_coord['NAME'] ?></a></li>
-                    <? } ?>
-                </ul>
 
             </div>
         </div>

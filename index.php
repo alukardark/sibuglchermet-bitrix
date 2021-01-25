@@ -5,8 +5,6 @@ $APPLICATION->SetTitle("Главная");
 ?>
 
 
-
-
 <? $APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "main_slider",
@@ -172,7 +170,7 @@ $APPLICATION->SetTitle("Главная");
 		"COMPONENT_TEMPLATE" => "produktsiya_main",
 		"IBLOCK_TYPE" => "-",
 		"IBLOCK_ID" => "3",
-		"NEWS_COUNT" => "999",
+		"NEWS_COUNT" => "10",
 		"SORT_BY1" => "SORT",
 		"SORT_ORDER1" => "ASC",
 		"SORT_BY2" => "ACTIVE_FROM",

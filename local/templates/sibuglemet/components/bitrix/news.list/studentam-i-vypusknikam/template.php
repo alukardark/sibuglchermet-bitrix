@@ -39,7 +39,7 @@ $this->setFrameMode(true);
                 <div class="studentam-i-vypusknikam__row">
                     <div class="">
                         <h4><strong><?=$i?></strong> <?= $arItem['PROPERTIES']['TITLE']['VALUE'] ?></h4>
-                        <h2><?= $arItem['NAME'] ?></h2>
+<!--                        <h2>--><?//= $arItem['NAME'] ?><!--</h2>-->
                         <div class="studentam-i-vypusknikam__img d-xl-none" style="background-image: url(<?=$arItem['PREVIEW_PICTURE']['SRC']?>);"></div>
                         <?= $arItem['PREVIEW_TEXT'] ?>
                     </div>

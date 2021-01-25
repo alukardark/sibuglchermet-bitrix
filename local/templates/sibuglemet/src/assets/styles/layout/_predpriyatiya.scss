@@ -228,10 +228,17 @@
 
   }
 
+  &__links-wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 490px;
+    margin: 0 0 20px;
+  }
   &__links {
-    margin: 20px 0 0;
     li {
       margin-bottom: 5px;
+      margin-right: 15px;
     }
     a {
       font-family: $font-add;
