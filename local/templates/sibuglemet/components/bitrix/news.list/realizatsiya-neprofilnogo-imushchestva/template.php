@@ -27,31 +27,77 @@ $this->setFrameMode(true);
     <div class="realizatsiya-neprofilnogo-imushchestva__row" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
         <div class="realizatsiya-neprofilnogo-imushchestva__box">
             <?= $arItem['DETAIL_TEXT'] ?>
-                <?
-                foreach ($arItem['PROPERTIES']['FILE']['VALUE'] as $fileItem) {
-                    $file_link = CFile::GetPath($fileItem);
-                    $file_name = strip_tags(CFile::GetByID($fileItem)->arResult[0]['ORIGINAL_NAME']);
-                    $file_expansion = new SplFileInfo($file_name);
-                    $file_expansion = $file_expansion->getExtension();
-                    $file_name = str_replace('.' . $file_expansion, '', $file_name);
-                    $file_size = CFile::GetByID($fileItem)->arResult[0]['FILE_SIZE']/1000000;
-                    $file_size = number_format($file_size, 2, '.', '');
-                    ?>
+            <?
+            foreach ($arItem['PROPERTIES']['FILE']['VALUE'] as $fileItem) {
+                $file_link = CFile::GetPath($fileItem);
+                $file_name = strip_tags(CFile::GetByID($fileItem)->arResult[0]['ORIGINAL_NAME']);
+                $file_expansion = new SplFileInfo($file_name);
+                $file_expansion = $file_expansion->getExtension();
+                $file_name = str_replace('.' . $file_expansion, '', $file_name);
+                $file_size = CFile::GetByID($fileItem)->arResult[0]['FILE_SIZE']/1000000;
+                $file_size = number_format($file_size, 2, '.', '');
+                ?>
 
-                    <a href="<?= $file_link ?>" target="_blank" class="file">
-                        <div class="file__img file__img--<?= $file_expansion ?>"></div>
-                        <div class="file__info">
-                            <div class="file__title"><?= $file_name ?></div>
-                            <div class="file__size">(<?=$file_size?> Мб)</div>
-                        </div>
-                    </a>
-                <? } ?>
+                <a href="<?= $file_link ?>" target="_blank" class="file">
+                    <div class="file__img file__img--<?= $file_expansion ?>"></div>
+                    <div class="file__info">
+                        <div class="file__title"><?= $file_name ?></div>
+                        <div class="file__size">(<?=$file_size?> Мб)</div>
+                    </div>
+                </a>
+            <? } ?>
+
+            <? $APPLICATION->IncludeComponent(
+                "bitrix:main.include",
+                ".default",
+                array(
+                    "AREA_FILE_SHOW" => "file",
+                    "AREA_FILE_SUFFIX" => "inc",
+                    "EDIT_TEMPLATE" => "",
+                    "PATH" => "/_include/tmc-text.php",
+                    "COMPONENT_TEMPLATE" => ".default"
+                ),
+                false
+            ); ?>
+
+
+            <?
+            foreach ($arItem['PROPERTIES']['FILE_2']['VALUE'] as $fileItem) {
+                $file_link = CFile::GetPath($fileItem);
+                $file_name = strip_tags(CFile::GetByID($fileItem)->arResult[0]['ORIGINAL_NAME']);
+                $file_expansion = new SplFileInfo($file_name);
+                $file_expansion = $file_expansion->getExtension();
+                $file_name = str_replace('.' . $file_expansion, '', $file_name);
+                $file_size = CFile::GetByID($fileItem)->arResult[0]['FILE_SIZE']/1000000;
+                $file_size = number_format($file_size, 2, '.', '');
+                ?>
+
+                <a href="<?= $file_link ?>" target="_blank" class="file">
+                    <div class="file__img file__img--<?= $file_expansion ?>"></div>
+                    <div class="file__info">
+                        <div class="file__title"><?= $file_name ?></div>
+                        <div class="file__size">(<?=$file_size?> Мб)</div>
+                    </div>
+                </a>
+            <? } ?>
 
 
             <img class="realizatsiya-neprofilnogo-imushchestva__img d-lg-none"
                  src="<?= $arItem['DETAIL_PICTURE']['SRC'] ?>" alt="">
 
             <div class="">
+                <? $APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    ".default",
+                    array(
+                        "AREA_FILE_SHOW" => "file",
+                        "AREA_FILE_SUFFIX" => "inc",
+                        "EDIT_TEMPLATE" => "",
+                        "PATH" => "/_include/tmc-text2.php",
+                        "COMPONENT_TEMPLATE" => ".default"
+                    ),
+                    false
+                ); ?>
                 <a href="//nelikvidi.com/org-ooo-uk-evraz-mezhdurechensk-11959.html" target="_blank" class="link">Перейти на сайт nelikvidi.com</a>
             </div>
         </div>

@@ -47,6 +47,7 @@
     padding-bottom: 25px;
     text-decoration: none;
     transition: .2s linear padding, .2s linear color;
+    min-width: 200px;
     span {
       background: #fff;
       padding: 11px;
@@ -81,9 +82,43 @@
       color: rgba(0, 115, 217, .75);
     }
 
-    &[data-class="predpriyatiya__0"] {
-      display: none;
+    &[data-class="predpriyatiya__5"] {
+      left: auto;
+      right: 0;
+      &:after {
+        left: auto;
+        right: 0;
+        transform: translateX(50%);
+      }
+      &:before {
+        left: auto;
+        right: 0;
+        transform: translateX(50%);
+      }
     }
+    &[data-class="predpriyatiya__2"] {
+      left: auto;
+      right: 0;
+      padding-bottom: 100px;
+      &:after {
+        left: auto;
+        right: 0;
+        transform: translateX(50%);
+      }
+      &:before {
+        left: auto;
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
+
+    &[data-class="predpriyatiya__1"] {
+      padding-bottom: 80px;
+    }
+    &[data-class="predpriyatiya__3"] {
+      padding-bottom: 157px;
+    }
+
   }
   &__row {
     display: flex;
@@ -228,24 +263,38 @@
 
   }
 
-  &__links-wrap{
+  &__links-wrap {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 490px;
     margin: 0 0 20px;
   }
   &__links {
     li {
-      margin-bottom: 5px;
-      margin-right: 15px;
+      margin-bottom: 11px;
+      margin-right: 22px;
     }
     a {
       font-family: $font-add;
-      font-size: 16px;
       font-weight: normal;
+      border: 1px solid rgba(0, 107, 202, 0.2);
+      font-size: 18px;
+      color: $color;
+      min-width: 274px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      text-decoration: none;
+      background: #fff;
+      transition: .2s ease-in-out color,.2s ease-in-out background, .2s ease-in-out opacity;
+      &:hover, &.active{
+        color: #fff;
+        background: $color;
+      }
+
     }
   }
+
 
 }
 
@@ -276,8 +325,19 @@
   .predpriyatiya {
     &__marker {
       font-size: 14px;
+      min-width: 145px;
       span {
         padding: 9px;
+      }
+
+      &[data-class="predpriyatiya__2"] {
+        padding-bottom: 80px;
+      }
+      &[data-class="predpriyatiya__1"] {
+        padding-bottom: 65px;
+      }
+      &[data-class="predpriyatiya__3"] {
+        padding-bottom: 120px;
       }
     }
 
@@ -333,11 +393,14 @@
     }
 
     &__links {
-      li{
+      li {
         margin-bottom: 0;
+        margin-right: 0px;
       }
       a {
         font-size: 14px;
+        min-width: auto;
+        width: 100%;
       }
     }
   }

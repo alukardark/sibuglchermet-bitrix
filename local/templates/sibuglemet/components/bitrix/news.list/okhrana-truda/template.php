@@ -83,13 +83,12 @@ $this->setFrameMode(true);
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="okhrana-truda__wrapper-text">
-                        <?= $arItem['PROPERTIES']['TEXT_1']['~VALUE']['TEXT'] ?>
-                    </div>
+
                 </div>
             </div>
         </div>
 
+        <? /* ?>
         <div class="okhrana-truda__process">
             <div class="container">
                 <div class="row">
@@ -106,10 +105,15 @@ $this->setFrameMode(true);
                 </div>
             </div>
         </div>
+        <? */ ?>
 
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <div class="okhrana-truda__wrapper-text">
+                        <?= $arItem['PROPERTIES']['TEXT_1']['~VALUE']['TEXT'] ?>
+                    </div>
+
                     <div class="okhrana-truda__wrapper-text">
                         <?= $arItem['PROPERTIES']['TEXT_2']['~VALUE']['TEXT'] ?>
                     </div>

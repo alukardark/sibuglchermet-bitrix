@@ -15,6 +15,8 @@ $this->setFrameMode(true);
 
 
 
+
+
 <? $i = 0; ?>
 <? foreach ($arResult["ITEMS"] as $arItem): ?>
     <?
@@ -26,6 +28,44 @@ $this->setFrameMode(true);
     ?>
 <? endforeach; ?>
 
+<div class="predpriyatiya__links-wrap">
+    <?
+    $ii = 0;
+    foreach ($map_coords as $map_coord_key => $map_coord) {
+        {
+            if ($ii % 2 == 0)
+                $arr1[$map_coord_key] = $map_coord;
+            else
+                $arr2[$map_coord_key] = $map_coord;
+        }
+        $ii++;
+    }
+    ?>
+    <ul class="predpriyatiya__links">
+        <?
+        $iii = 0;
+        foreach ($arr1 as $map_coord_key => $map_coord) {
+            if ($iii == 0){
+                $class = 'active';
+            }else{
+                $class = '';
+            }
+            $iii++;
+            ?>
+            <li><a href="<?= "#" . $map_coord_key ?>" class="anchor predpriyatiya__link <?=$class?>"
+                   data-class="<?= $map_coord['CLASS'] ?>"><?= $map_coord['NAME'] ?></a></li>
+
+        <? } ?>
+    </ul>
+    <ul class="predpriyatiya__links">
+        <? foreach ($arr2 as $map_coord_key => $map_coord) { ?>
+
+            <li><a href="<?= "#" . $map_coord_key ?>" class="anchor predpriyatiya__link"
+                   data-class="<?= $map_coord['CLASS'] ?>"><?= $map_coord['NAME'] ?></a></li>
+
+        <? } ?>
+    </ul>
+</div>
 
 <? $i = 0; ?>
 <? foreach ($arResult["ITEMS"] as $arItem): ?>
@@ -39,37 +79,9 @@ $this->setFrameMode(true);
     $i++;
     ?>
 
+
+
     <div id="<?= $this->GetEditAreaId($arItem['ID']); ?>" class="predpriyatiya__item <?= $class ?>">
-
-        <div class="predpriyatiya__links-wrap">
-            <?
-            $ii = 0;
-            foreach ($map_coords as $map_coord_key => $map_coord) {
-                {
-                    if ($ii % 2 == 0)
-                        $arr1[$map_coord_key] = $map_coord;
-                    else
-                        $arr2[$map_coord_key] = $map_coord;
-                }
-                $ii++;
-            }
-            ?>
-            <ul class="predpriyatiya__links">
-                <? foreach ($arr1 as $map_coord_key => $map_coord) { ?>
-                    <li><a href="<?= "#" . $map_coord_key ?>" class="anchor predpriyatiya__link"
-                           data-class="<?= $map_coord['CLASS'] ?>"><?= $map_coord['NAME'] ?></a></li>
-
-                <? } ?>
-            </ul>
-            <ul class="predpriyatiya__links">
-                <? foreach ($arr2 as $map_coord_key => $map_coord) { ?>
-
-                    <li><a href="<?= "#" . $map_coord_key ?>" class="anchor predpriyatiya__link"
-                           data-class="<?= $map_coord['CLASS'] ?>"><?= $map_coord['NAME'] ?></a></li>
-
-                <? } ?>
-            </ul>
-        </div>
 
         <h2 id="block<?= $arItem['ID'] ?>"><?= $arItem['NAME'] ?></h2>
         <div class="predpriyatiya__row">
@@ -125,10 +137,8 @@ $this->setFrameMode(true);
                 <? endif; ?>
 
 
-
             </div>
         </div>
-
 
         <div class="management-mini management-mini--contacts-none">
             <?
@@ -247,10 +257,12 @@ $this->setFrameMode(true);
 
             <? $i = 0; ?>
             <? foreach ($map_coords as $map_coord_key => $map_coord) { ?>
-            <? if ($i == 0) {
-                $i++;
+
+            <? if (empty($map_coord['PROPERTY'])) {
                 continue;
             } ?>
+
+
 
             // Создаём макет содержимого.
             MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
@@ -284,9 +296,10 @@ $this->setFrameMode(true);
 
 
 
-        myMap.setBounds(myMap.geoObjects.getBounds(), {checkZoomRange: true, zoomMargin: 9});
-        // myMap.setBounds(myMap.geoObjects.getBounds()); //Установить границы карты по объектам
-        // myMap.setZoom(myMap.getZoom()-0.4); //Чуть-чуть уменьшить зум для красоты
+        // myMap.setBounds(myMap.geoObjects.getBounds(), {checkZoomRange: true, zoomMargin: 9});
+        myMap.setBounds(myMap.geoObjects.getBounds()); //Установить границы карты по объектам
+        myMap.setZoom(myMap.getZoom() - 1.4); //Чуть-чуть уменьшить зум для красоты
+
 
         myMap.behaviors.disable('scrollZoom');
         if (isMobile) {
@@ -299,7 +312,10 @@ $this->setFrameMode(true);
             $('.predpriyatiya__marker, .predpriyatiya__link').click(function () {
                 var className = $(this).attr('data-class');
 
-                console.log('.predpriyatiya__item.' + className);
+
+                $(".predpriyatiya__links .predpriyatiya__link").removeClass('active');
+                $(".predpriyatiya__links .predpriyatiya__link[data-class="+className+"]").addClass('active');
+
 
                 $('.predpriyatiya__item.' + className).siblings().removeClass('active');
                 $('.predpriyatiya__item.' + className).addClass('active');
